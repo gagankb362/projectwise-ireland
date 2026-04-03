@@ -91,24 +91,29 @@ nav.scrolled {
 .nav-logo {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.4rem; font-weight: 600;
-  color: var(--ink); text-decoration: none;
+  color: var(--cream); text-decoration: none;
   letter-spacing: -0.01em;
+  transition: color 0.3s;
 }
 .nav-logo span { color: var(--gold); }
-.nav-logo em { font-style: italic; font-weight: 300; }
+.nav-logo em { font-style: italic; font-weight: 300; color: rgba(247,245,240,0.6); }
+nav.scrolled .nav-logo { color: var(--ink); }
+nav.scrolled .nav-logo em { color: rgba(10,10,15,0.45); }
 
 .nav-links {
   display: flex; gap: 0.25rem; list-style: none;
 }
 .nav-links a {
   font-size: 0.78rem; font-weight: 500;
-  color: var(--ink3); text-decoration: none;
+  color: rgba(247,245,240,0.7); text-decoration: none;
   padding: 0.4rem 0.75rem;
   border-radius: 100px;
   letter-spacing: 0.02em;
   transition: all 0.2s;
 }
-.nav-links a:hover { background: var(--ink); color: var(--cream); }
+.nav-links a:hover { background: rgba(255,255,255,0.12); color: white; }
+nav.scrolled .nav-links a { color: var(--ink3); }
+nav.scrolled .nav-links a:hover { background: var(--ink); color: var(--cream); }
 
 .nav-cta {
   background: var(--green) !important;
@@ -121,7 +126,8 @@ nav.scrolled {
   display: none; flex-direction: column;
   gap: 5px; cursor: pointer; padding: 8px;
 }
-.hamburger span { width: 22px; height: 1.5px; background: var(--ink); border-radius: 2px; transition: 0.3s; }
+.hamburger span { width: 22px; height: 1.5px; background: var(--cream); border-radius: 2px; transition: 0.3s; }
+nav.scrolled .hamburger span { background: var(--ink); }
 
 /* ── HERO ── */
 #hero {
@@ -1372,50 +1378,184 @@ button { cursor: pointer !important; }
       <h2 class="section-title">Project Management<br><em>Methodologies</em></h2>
       <p class="section-lead">There is no universally "best" methodology. The right approach depends on your project's complexity, certainty of requirements, team size, and funder expectations.</p>
     </div>
-    <div style="margin-top:2rem;">
-      <div class="tab-nav">
-        <button class="tab-btn active" onclick="showTab(this,'waterfall')">Waterfall</button>
-        <button class="tab-btn" onclick="showTab(this,'agile')">Agile</button>
-        <button class="tab-btn" onclick="showTab(this,'prince2')">PRINCE2</button>
-        <button class="tab-btn" onclick="showTab(this,'lean')">Lean</button>
-        <button class="tab-btn" onclick="showTab(this,'hybrid')">Hybrid</button>
-      </div>
+    <!-- METHODOLOGIES — pure CSS accordion, zero JS dependency -->
+    <style>
+      .meth-acc { margin-top:2rem; border:1px solid var(--border); border-radius:var(--r2); overflow:hidden; }
+      .meth-item { border-bottom:1px solid var(--border); }
+      .meth-item:last-child { border-bottom:none; }
+      .meth-toggle { display:none; }
+      .meth-label {
+        display:flex; align-items:center; justify-content:space-between;
+        padding:1.25rem 1.75rem; cursor:pointer;
+        font-family:'Outfit',sans-serif; font-size:1rem; font-weight:600;
+        color:var(--ink); background:var(--white);
+        transition:background 0.2s, color 0.2s;
+        user-select:none;
+      }
+      .meth-label:hover { background:var(--cream); color:var(--green); }
+      .meth-toggle:checked + .meth-label { background:var(--green); color:white; }
+      .meth-label-icon { width:28px; height:28px; background:var(--cream2); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.1rem; color:var(--green); transition:transform 0.3s, background 0.3s; flex-shrink:0; }
+      .meth-toggle:checked + .meth-label .meth-label-icon { transform:rotate(45deg); background:rgba(255,255,255,0.2); color:white; }
+      .meth-body { max-height:0; overflow:hidden; transition:max-height 0.5s ease; }
+      .meth-toggle:checked ~ .meth-body { max-height:2000px; }
+      .meth-body-inner { padding:2rem 1.75rem; background:var(--cream); }
+    </style>
 
-      <div id="tab-waterfall" class="tab-panel active">
-        <div class="card-grid-2">
-          <div><h3 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;margin-bottom:1rem;">Waterfall / Traditional PM</h3><p style="font-size:0.92rem;font-weight:300;color:rgba(10,10,15,0.65);line-height:1.8;margin-bottom:1.5rem;">Sequential phases — initiation → planning → execution → close. Best where requirements are well understood and change is unlikely.</p><div class="callout callout-green"><div class="callout-label">✅ Use when</div><p>Construction projects · Events with fixed dates · Regulatory compliance · Prescriptive funder requirements (many grant-funded projects must follow a defined plan)</p></div><div class="callout callout-gold" style="margin-top:1rem;"><div class="callout-label">⚠️ Limitations</div><p>Inflexible to change. Problems discovered late are expensive to fix. Not suited to digital, creative, or innovation projects where learning happens through doing.</p></div></div>
-          <div><div class="media-card"><div class="media-header"><span style="font-size:1rem;">🎬</span><span class="media-title-text">Waterfall vs Agile Explained</span><span class="media-label">VIDEO</span></div><div class="media-body"><div class="video-thumb"><a href="https://www.youtube.com/watch?v=MqDqk1BHMqE" target="_blank" class="play-btn-wrap">▶</a><div class="video-caption">Plain English comparison · 8 min</div></div><p>A clear, practical breakdown of when to use each approach — ideal for explaining your methodology choice to board members or funders.</p></div></div></div>
+    <div class="meth-acc">
+
+      <!-- WATERFALL -->
+      <div class="meth-item">
+        <input type="checkbox" id="meth-waterfall" class="meth-toggle" checked>
+        <label for="meth-waterfall" class="meth-label">
+          <span>🌊 Waterfall / Traditional PM</span>
+          <span class="meth-label-icon">+</span>
+        </label>
+        <div class="meth-body">
+          <div class="meth-body-inner">
+            <div class="card-grid-2">
+              <div>
+                <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;margin-bottom:1rem;">Waterfall / Traditional PM</h3>
+                <p style="font-size:0.92rem;font-weight:300;color:rgba(10,10,15,0.65);line-height:1.8;margin-bottom:1.5rem;">Sequential phases — initiation → planning → execution → close. Best where requirements are well understood and change is unlikely.</p>
+                <div class="callout callout-green"><div class="callout-label">✅ Use when</div><p>Construction projects · Events with fixed dates · Regulatory compliance · Prescriptive funder requirements</p></div>
+                <div class="callout callout-gold" style="margin-top:1rem;"><div class="callout-label">⚠️ Limitations</div><p>Inflexible to change. Problems discovered late are expensive to fix. Not suited to digital or innovation projects.</p></div>
+              </div>
+              <div>
+                <div class="media-card">
+                  <div class="media-header"><span style="font-size:1rem;">🎬</span><span class="media-title-text">Waterfall vs Agile Explained</span><span class="media-label">VIDEO</span></div>
+                  <div class="media-body">
+                    <div class="video-thumb"><a href="https://www.youtube.com/watch?v=MqDqk1BHMqE" target="_blank" rel="noopener noreferrer" class="play-btn-wrap">▶</a><div class="video-caption">Plain English comparison · 8 min</div></div>
+                    <p>A clear breakdown of when to use each approach — ideal for explaining your methodology to board members or funders.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div id="tab-agile" class="tab-panel">
-        <div class="card-grid-2">
-          <div><h3 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;margin-bottom:1rem;">Agile Project Management</h3><p style="font-size:0.92rem;font-weight:300;color:rgba(10,10,15,0.65);line-height:1.8;margin-bottom:1.5rem;">From the Agile Manifesto (2001) <sup class="cite">25</sup> — iterative delivery, collaboration, and responding to change over following a fixed plan.</p><div class="callout callout-green"><div class="callout-label">✅ Use when</div><p>Website or app development · Service design · Innovation pilots · Projects where requirements evolve through user feedback</p></div><div class="arrow-list" style="margin-top:1.5rem;"><li>Sprint: 1–4 week cycles of Plan → Build → Review → Retrospect</li><li>Backlog: prioritised using MoSCoW — Must / Should / Could / Won't</li><li>Daily standup: 15-minute check-in replaces multi-hour meetings</li><li>OGCIO has published an Agile Framework for Irish public bodies</li></ul></div>
-          <div><div class="callout callout-gold"><div class="callout-label">Free Agile Tools</div><p><strong>Trello</strong> — Free Kanban board<br><strong>Jira</strong> — Free up to 10 users<br><strong>GitHub Projects</strong> — Free for small teams<br><strong>Physical post-it wall</strong> — Still highly effective for co-located teams</p></div></div>
+      <!-- AGILE -->
+      <div class="meth-item">
+        <input type="checkbox" id="meth-agile" class="meth-toggle">
+        <label for="meth-agile" class="meth-label">
+          <span>🔄 Agile</span>
+          <span class="meth-label-icon">+</span>
+        </label>
+        <div class="meth-body">
+          <div class="meth-body-inner">
+            <div class="card-grid-2">
+              <div>
+                <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;margin-bottom:1rem;">Agile Project Management</h3>
+                <p style="font-size:0.92rem;font-weight:300;color:rgba(10,10,15,0.65);line-height:1.8;margin-bottom:1.5rem;">From the Agile Manifesto (2001) <sup class="cite">25</sup> — iterative delivery, collaboration, and responding to change over following a fixed plan.</p>
+                <div class="callout callout-green"><div class="callout-label">✅ Use when</div><p>Website or app development · Service design · Innovation pilots · Projects where requirements evolve through user feedback</p></div>
+                <ul class="arrow-list" style="margin-top:1.5rem;">
+                  <li>Sprint: 1–4 week cycles of Plan → Build → Review → Retrospect</li>
+                  <li>Backlog: prioritised using MoSCoW — Must / Should / Could / Won't</li>
+                  <li>Daily standup: 15-minute check-in replaces multi-hour meetings</li>
+                  <li>OGCIO has published an Agile Framework for Irish public bodies</li>
+                </ul>
+              </div>
+              <div>
+                <div class="callout callout-gold">
+                  <div class="callout-label">🆓 Free Agile Tools</div>
+                  <p><strong>Trello</strong> — Free Kanban board<br><strong>Jira</strong> — Free up to 10 users<br><strong>GitHub Projects</strong> — Free for small teams<br><strong>Physical post-it wall</strong> — Still highly effective for co-located teams</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div id="tab-prince2" class="tab-panel">
-        <div class="card-grid-2">
-          <div><h3 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;margin-bottom:1rem;">PRINCE2 <sup class="cite">26</sup></h3><p style="font-size:0.92rem;font-weight:300;color:rgba(10,10,15,0.65);line-height:1.8;margin-bottom:1.5rem;">PRojects IN Controlled Environments — a process-based framework widely used across Ireland, particularly in public sector and EU-funded projects.</p><div class="callout callout-green"><div class="callout-label">✅ Use when</div><p>EU structural funds (ERDF, ESF) · Large public sector projects · High governance & audit trail requirements · Bidding for HSE or Government contracts</p></div></div>
-          <div><h4 style="font-weight:600;margin-bottom:1rem;">7 Principles</h4><ul class="arrow-list"><li>Continued business justification — stop if no longer worthwhile</li><li>Learn from experience — built in, not bolted on</li><li>Defined roles and responsibilities</li><li>Manage by stages — formal review before proceeding</li><li>Manage by exception — escalate only when tolerances breach</li><li>Focus on products — define the deliverable first</li><li>Tailor to the project — scale it, don't skip it</li></ul></div>
+      <!-- PRINCE2 -->
+      <div class="meth-item">
+        <input type="checkbox" id="meth-prince2" class="meth-toggle">
+        <label for="meth-prince2" class="meth-label">
+          <span>👑 PRINCE2</span>
+          <span class="meth-label-icon">+</span>
+        </label>
+        <div class="meth-body">
+          <div class="meth-body-inner">
+            <div class="card-grid-2">
+              <div>
+                <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;margin-bottom:1rem;">PRINCE2 <sup class="cite">26</sup></h3>
+                <p style="font-size:0.92rem;font-weight:300;color:rgba(10,10,15,0.65);line-height:1.8;margin-bottom:1.5rem;">PRojects IN Controlled Environments — a process-based framework widely used across Ireland, particularly in public sector and EU-funded projects.</p>
+                <div class="callout callout-green"><div class="callout-label">✅ Use when</div><p>EU structural funds (ERDF, ESF) · Large public sector projects · High governance and audit trail requirements · Bidding for HSE or Government contracts</p></div>
+              </div>
+              <div>
+                <h4 style="font-weight:600;margin-bottom:1rem;color:var(--ink);">7 Principles of PRINCE2</h4>
+                <ul class="arrow-list">
+                  <li>Continued business justification — stop if no longer worthwhile</li>
+                  <li>Learn from experience — built in, not bolted on</li>
+                  <li>Defined roles and responsibilities — no ambiguity</li>
+                  <li>Manage by stages — formal review before proceeding</li>
+                  <li>Manage by exception — escalate only when tolerances breach</li>
+                  <li>Focus on products — define the deliverable first</li>
+                  <li>Tailor to the project — scale it, don't skip it</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div id="tab-lean" class="tab-panel">
-        <div class="card-grid-2">
-          <div><h3 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;margin-bottom:1rem;">Lean Project Management <sup class="cite">27</sup></h3><p style="font-size:0.92rem;font-weight:300;color:rgba(10,10,15,0.65);line-height:1.8;margin-bottom:1.5rem;">From Toyota's production system (Ohno, 1988) — maximise value for the end user while eliminating waste. Now widely applied in Irish healthcare and charities.</p><div class="callout callout-green"><div class="callout-label">✅ Lean in Ireland</div><p>The HSE has applied Lean extensively across hospitals. Cope Galway, Peter McVerry Trust, and others have adopted Lean principles to improve service pathways and reduce waiting times.</p></div></div>
-          <div><h4 style="font-weight:600;margin-bottom:1rem;">8 Wastes in Services</h4><div class="card-grid-2" style="gap:0.75rem;"><div class="card" style="padding:1.25rem;"><div style="font-weight:600;color:var(--green);font-size:0.82rem;margin-bottom:0.25rem;">Overproduction</div><p style="font-size:0.78rem;color:rgba(10,10,15,0.6);margin:0;">Reports nobody reads</p></div><div class="card" style="padding:1.25rem;"><div style="font-weight:600;color:#a02020;font-size:0.82rem;margin-bottom:0.25rem;">Waiting</div><p style="font-size:0.78rem;color:rgba(10,10,15,0.6);margin:0;">Approval bottlenecks</p></div><div class="card" style="padding:1.25rem;"><div style="font-weight:600;color:var(--gold);font-size:0.82rem;margin-bottom:0.25rem;">Over-processing</div><p style="font-size:0.78rem;color:rgba(10,10,15,0.6);margin:0;">More than the client needs</p></div><div class="card" style="padding:1.25rem;"><div style="font-weight:600;color:#2040a0;font-size:0.82rem;margin-bottom:0.25rem;">Defects</div><p style="font-size:0.78rem;color:rgba(10,10,15,0.6);margin:0;">Errors requiring rework</p></div></div></div>
+      <!-- LEAN -->
+      <div class="meth-item">
+        <input type="checkbox" id="meth-lean" class="meth-toggle">
+        <label for="meth-lean" class="meth-label">
+          <span>⚡ Lean</span>
+          <span class="meth-label-icon">+</span>
+        </label>
+        <div class="meth-body">
+          <div class="meth-body-inner">
+            <div class="card-grid-2">
+              <div>
+                <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;margin-bottom:1rem;">Lean Project Management <sup class="cite">27</sup></h3>
+                <p style="font-size:0.92rem;font-weight:300;color:rgba(10,10,15,0.65);line-height:1.8;margin-bottom:1.5rem;">From Toyota's production system (Ohno, 1988) — maximise value for the end user while eliminating waste. Now widely applied in Irish healthcare and charities.</p>
+                <div class="callout callout-green"><div class="callout-label">✅ Lean in Ireland</div><p>The HSE has applied Lean extensively across hospitals. Cope Galway and Peter McVerry Trust have adopted Lean principles to reduce client waiting times.</p></div>
+              </div>
+              <div>
+                <h4 style="font-weight:600;margin-bottom:1rem;color:var(--ink);">8 Wastes in Services</h4>
+                <div class="card-grid-2" style="gap:0.75rem;">
+                  <div class="card" style="padding:1.25rem;background:white;"><div style="font-weight:600;color:var(--green);font-size:0.82rem;margin-bottom:0.25rem;">Overproduction</div><p style="font-size:0.78rem;color:rgba(10,10,15,0.6);margin:0;">Reports nobody reads</p></div>
+                  <div class="card" style="padding:1.25rem;background:white;"><div style="font-weight:600;color:#a02020;font-size:0.82rem;margin-bottom:0.25rem;">Waiting</div><p style="font-size:0.78rem;color:rgba(10,10,15,0.6);margin:0;">Approval bottlenecks</p></div>
+                  <div class="card" style="padding:1.25rem;background:white;"><div style="font-weight:600;color:var(--gold);font-size:0.82rem;margin-bottom:0.25rem;">Over-processing</div><p style="font-size:0.78rem;color:rgba(10,10,15,0.6);margin:0;">More than client needs</p></div>
+                  <div class="card" style="padding:1.25rem;background:white;"><div style="font-weight:600;color:#2040a0;font-size:0.82rem;margin-bottom:0.25rem;">Defects</div><p style="font-size:0.78rem;color:rgba(10,10,15,0.6);margin:0;">Errors requiring rework</p></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div id="tab-hybrid" class="tab-panel">
-        <div class="callout callout-green" style="margin-bottom:2rem;">
-          <div class="callout-label">🏆 Best Practice for Irish Charities & SMEs</div>
-          <p><strong>Overall project:</strong> PRINCE2-style governance — satisfies funders and auditors<br><strong>Within each stage:</strong> Agile sprints — allows the team to adapt and learn<br><strong>Outcome measurement:</strong> Logic Model + OKRs — bridges activities to long-term impact</p>
+      <!-- HYBRID -->
+      <div class="meth-item">
+        <input type="checkbox" id="meth-hybrid" class="meth-toggle">
+        <label for="meth-hybrid" class="meth-label">
+          <span>🏆 Hybrid — Best for Irish SMEs & Charities</span>
+          <span class="meth-label-icon">+</span>
+        </label>
+        <div class="meth-body">
+          <div class="meth-body-inner">
+            <div class="callout callout-green" style="margin-bottom:2rem;">
+              <div class="callout-label">🏆 Best Practice Recommendation</div>
+              <p><strong>Overall project:</strong> PRINCE2-style governance — satisfies funders and auditors<br><strong>Within each stage:</strong> Agile sprints — allows the team to adapt and learn from users<br><strong>Outcome measurement:</strong> Logic Model + OKRs — bridges activities to long-term impact</p>
+            </div>
+            <div style="overflow-x:auto;">
+              <table style="width:100%;border-collapse:collapse;font-size:0.85rem;">
+                <thead><tr style="background:var(--ink);color:white;"><th style="padding:0.75rem 1rem;text-align:left;">Project Type</th><th style="padding:0.75rem 1rem;text-align:left;">Recommended Approach</th></tr></thead>
+                <tbody>
+                  <tr style="border-bottom:1px solid var(--border);background:white;"><td style="padding:0.75rem 1rem;">Event with fixed date</td><td style="padding:0.75rem 1rem;font-weight:600;color:var(--green);">Waterfall</td></tr>
+                  <tr style="border-bottom:1px solid var(--border);background:var(--cream2);"><td style="padding:0.75rem 1rem;">EU / Government funded</td><td style="padding:0.75rem 1rem;font-weight:600;color:var(--green);">PRINCE2</td></tr>
+                  <tr style="border-bottom:1px solid var(--border);background:white;"><td style="padding:0.75rem 1rem;">Digital product or website</td><td style="padding:0.75rem 1rem;font-weight:600;color:var(--green);">Agile / Scrum</td></tr>
+                  <tr style="border-bottom:1px solid var(--border);background:var(--cream2);"><td style="padding:0.75rem 1rem;">Service improvement</td><td style="padding:0.75rem 1rem;font-weight:600;color:var(--green);">Lean or Agile</td></tr>
+                  <tr style="border-bottom:1px solid var(--border);background:white;"><td style="padding:0.75rem 1rem;">Community programme</td><td style="padding:0.75rem 1rem;font-weight:600;color:var(--green);">Hybrid + Logic Model</td></tr>
+                  <tr style="background:var(--cream2);"><td style="padding:0.75rem 1rem;">Capital / construction</td><td style="padding:0.75rem 1rem;font-weight:600;color:var(--green);">Waterfall + formal risk</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
-        <div style="overflow-x:auto;"><table style="width:100%;border-collapse:collapse;font-size:0.85rem;"><thead><tr style="background:var(--ink);color:white;"><th style="padding:0.75rem 1rem;text-align:left;border-radius:8px 0 0 0;">Project Type</th><th style="padding:0.75rem 1rem;text-align:left;border-radius:0 8px 0 0;">Recommended Approach</th></tr></thead><tbody><tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 1rem;">Event with fixed date</td><td style="padding:0.75rem 1rem;font-weight:600;color:var(--green);">Waterfall</td></tr><tr style="border-bottom:1px solid var(--border);background:var(--cream2);"><td style="padding:0.75rem 1rem;">EU / Government funded</td><td style="padding:0.75rem 1rem;font-weight:600;color:var(--green);">PRINCE2</td></tr><tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 1rem;">Digital product or website</td><td style="padding:0.75rem 1rem;font-weight:600;color:var(--green);">Agile / Scrum</td></tr><tr style="border-bottom:1px solid var(--border);background:var(--cream2);"><td style="padding:0.75rem 1rem;">Service improvement</td><td style="padding:0.75rem 1rem;font-weight:600;color:var(--green);">Lean or Agile</td></tr><tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 1rem;">Community programme</td><td style="padding:0.75rem 1rem;font-weight:600;color:var(--green);">Hybrid + Logic Model</td></tr><tr><td style="padding:0.75rem 1rem;">Capital / construction</td><td style="padding:0.75rem 1rem;font-weight:600;color:var(--green);">Waterfall + formal risk</td></tr></tbody></table></div>
       </div>
+
     </div>
   </div>
 </section>
@@ -1504,7 +1644,7 @@ button { cursor: pointer !important; }
             <a href="https://www.charityregulator.ie" target="_blank" rel="noopener noreferrer" style="color:var(--green);font-weight:500;">charityregulator.ie</a> ·
             <a href="https://www.pobal.ie" target="_blank" rel="noopener noreferrer" style="color:var(--green);font-weight:500;">pobal.ie</a> ·
             <a href="https://www.wheel.ie" target="_blank" rel="noopener noreferrer" style="color:var(--green);font-weight:500;">wheel.ie</a> ·
-            <a href="https://www.volunteering.ie" target="_blank" rel="noopener noreferrer" style="color:var(--green);font-weight:500;">volunteering.ie</a> ·
+            <a href="https://www.volunteeringireland.ie" target="_blank" rel="noopener noreferrer" style="color:var(--green);font-weight:500;">volunteering.ie</a> ·
             <a href="https://www.ogcio.gov.ie" target="_blank" rel="noopener noreferrer" style="color:var(--green);font-weight:500;">ogcio.gov.ie</a> ·
             <a href="https://www.dataprotection.ie" target="_blank" rel="noopener noreferrer" style="color:var(--green);font-weight:500;">dataprotection.ie</a> ·
             <a href="https://www.cro.ie" target="_blank" rel="noopener noreferrer" style="color:var(--green);font-weight:500;">cro.ie</a> ·
