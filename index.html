@@ -682,8 +682,8 @@ nav.scrolled {
 .ref-list { list-style: none; counter-reset: ref; }
 .ref-list li {
   counter-increment: ref;
-  display: grid; grid-template-columns: auto 1fr;
-  gap: 1.25rem; padding: 1rem 0;
+  display: grid; grid-template-columns: 32px 1fr;
+  gap: 1rem; padding: 0.9rem 0;
   border-bottom: 1px solid var(--border2);
   font-size: 0.86rem; font-weight: 300;
   color: rgba(10,10,15,0.7); line-height: 1.7;
@@ -694,7 +694,7 @@ nav.scrolled {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.7rem; font-weight: 500;
   color: var(--green); padding-top: 3px;
-  white-space: nowrap;
+  white-space: nowrap; text-align: right;
 }
 .ref-list li em { font-style: italic; }
 
@@ -1206,7 +1206,7 @@ a { cursor: none !important; }
           <div class="sdg-pill" style="background:#FD9D24;color:#1a1a1a;"><div class="sdg-num">SDG 11</div>Sustainable Cities</div>
           <div class="sdg-pill" style="background:#3F7E44;"><div class="sdg-num">SDG 13</div>Climate Action</div>
         </div>
-        <a href="https://www.un.org/sustainabledevelopment/sustainable-development-goals/" target="_blank" class="btn-gold" style="margin-top:1.5rem;font-size:0.82rem;padding:0.75rem 1.75rem;">Explore All 17 SDGs →</a>
+        <a href="https://www.un.org/sustainabledevelopment/sustainable-development-goals/" target="_blank" rel="noopener noreferrer" class="btn-gold" style="margin-top:1.5rem;font-size:0.82rem;padding:0.75rem 1.75rem;">Explore All 17 SDGs →</a>
       </div>
     </div>
   </div>
@@ -1241,7 +1241,7 @@ a { cursor: none !important; }
           <div class="media-header gold"><span style="font-size:1rem;">🔗</span><span class="media-title-text">Charities Regulator — Governance Code</span><span class="media-label">OFFICIAL</span></div>
           <div class="media-body">
             <p>Ireland's Charities Regulator has published a comprehensive Governance Code — a practical, step-by-step guide adopted by most major Irish funders as a requirement.</p>
-            <a href="https://www.charityregulator.ie/en/information-for-charities/governance-code/" target="_blank" class="btn-gold" style="font-size:0.82rem;padding:0.65rem 1.5rem;">Download the Code →</a>
+            <a href="https://www.charityregulator.ie/en/information-for-charities/governance-code/" target="_blank" rel="noopener noreferrer" class="btn-gold" style="font-size:0.82rem;padding:0.65rem 1.5rem;">Download the Code →</a>
           </div>
         </div>
       </div>
@@ -1452,7 +1452,7 @@ a { cursor: none !important; }
       <h2 class="section-title">References &<br><em>Further Reading</em></h2>
       <p class="section-lead">All 31 sources cited throughout this guide. Papers accessible through Irish university library databases are marked †. Open-access sources marked ‡.</p>
     </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;" class="reveal">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;" class="reveal">
       <div>
         <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--green);margin-bottom:1.5rem;">Core Academic References</div>
         <ul class="ref-list">
@@ -1484,7 +1484,7 @@ a { cursor: none !important; }
           <li>Freeman, R.E. (1984). <em>Strategic Management: A Stakeholder Approach</em>. Boston: Pitman.</li>
           <li>Mendelow, A.L. (1991). "Stakeholder Mapping." <em>2nd Int'l Conference on Information Systems</em>, Cambridge.</li>
           <li>Arnstein, S.R. (1969). "A ladder of citizen participation." <em>Journal of the American Institute of Planners</em>, 35(4), 216–224. †</li>
-          <li>Standish Group (2020). <em>CHAOS Report 2020: Beyond Infinity</em>. The Standish Group. </li>
+          <li>Standish Group (2020). <em>CHAOS Report 2020: Beyond Infinity</em>. The Standish Group.</li>
           <li>Beck, K. et al. (2001). <em>Manifesto for Agile Software Development</em>. agilemanifesto.org ‡</li>
           <li>AXELOS (2017). <em>Managing Successful Projects with PRINCE2</em>, 6th ed. London: AXELOS.</li>
           <li>Ohno, T. (1988). <em>Toyota Production System</em>. Portland: Productivity Press.</li>
@@ -1544,17 +1544,17 @@ a { cursor: none !important; }
     <div>
       <div class="footer-heading">Irish Resources</div>
       <ul class="footer-links">
-        <li><a href="https://www.charityregulator.ie" target="_blank">Charities Regulator</a></li>
-        <li><a href="https://www.pobal.ie" target="_blank">Pobal</a></li>
-        <li><a href="https://www.wheel.ie" target="_blank">The Wheel</a></li>
-        <li><a href="https://www.dataprotection.ie" target="_blank">DPC / GDPR</a></li>
-        <li><a href="https://www.ogcio.gov.ie" target="_blank">OGCIO</a></li>
-        <li><a href="https://www.enterprise-ireland.com" target="_blank">Enterprise Ireland</a></li>
+        <li><a href="https://www.charityregulator.ie" target="_blank" rel="noopener noreferrer">Charities Regulator</a></li>
+        <li><a href="https://www.pobal.ie" target="_blank" rel="noopener noreferrer">Pobal</a></li>
+        <li><a href="https://www.wheel.ie" target="_blank" rel="noopener noreferrer">The Wheel</a></li>
+        <li><a href="https://www.dataprotection.ie" target="_blank" rel="noopener noreferrer">DPC / GDPR</a></li>
+        <li><a href="https://www.ogcio.gov.ie" target="_blank" rel="noopener noreferrer">OGCIO</a></li>
+        <li><a href="https://www.enterprise-ireland.com" target="_blank" rel="noopener noreferrer">Enterprise Ireland</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <div>© 2025 ProjectWise Ireland · MSc Project Management · All academic sources referenced</div>
+    <div>© 2026 ProjectWise Ireland · MSc Project Management · All academic sources referenced</div>
     <div><a href="#references">Sources</a><a href="#hero">Back to top ↑</a></div>
   </div>
 </footer>
@@ -1601,9 +1601,11 @@ document.querySelectorAll('.acc-item.open').forEach(i => {
 function showTab(btn, id) {
   btn.closest('.tab-nav').querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  const sec = btn.closest('section');
-  sec.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-  document.getElementById('tab-'+id).classList.add('active');
+  // Hide all tab panels everywhere first
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  // Show only the selected one
+  var panel = document.getElementById('tab-'+id);
+  if(panel) panel.classList.add('active');
 }
 
 // MOBILE
