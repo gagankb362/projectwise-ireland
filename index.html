@@ -114,6 +114,8 @@ nav.scrolled .nav-logo em { color: rgba(10,10,15,0.45); }
 .nav-links a:hover { background: rgba(255,255,255,0.12); color: white; }
 nav.scrolled .nav-links a { color: var(--ink3); }
 nav.scrolled .nav-links a:hover { background: var(--ink); color: var(--cream); }
+nav.scrolled .nav-links a.nav-active { background: #e8f5ef; color: var(--green) !important; font-weight: 600; }
+nav:not(.scrolled) .nav-links a.nav-active { background: rgba(255,255,255,0.18); color: white !important; font-weight: 600; }
 
 .nav-cta {
   background: var(--green) !important;
@@ -1983,6 +1985,7 @@ function updateNavSpy() {
   var sections = ['teams','risk','leadership','ethics','sustainability','governance','strategy','planning','stakeholders','methodologies','ai','references'];
   var scrollPos = window.scrollY + 100;
   var current = '';
+  var isScrolled = document.getElementById('navbar').classList.contains('scrolled');
   sections.forEach(function(id) {
     var el = document.getElementById(id);
     if(el && el.offsetTop <= scrollPos) current = id;
@@ -1990,9 +1993,10 @@ function updateNavSpy() {
   document.querySelectorAll('.nav-links a').forEach(function(a) {
     a.style.background = '';
     a.style.color = '';
+    a.style.fontWeight = '';
+    a.classList.remove('nav-active');
     if(a.getAttribute('href') === '#'+current) {
-      a.style.background = 'rgba(255,255,255,0.15)';
-      a.style.color = 'white';
+      a.classList.add('nav-active');
     }
   });
 }
