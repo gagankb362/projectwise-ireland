@@ -1448,42 +1448,38 @@ button { cursor: pointer !important; }
 
         <div class="pie-lc-wrap">
           <div class="pie-lc-chart">
-            <svg viewBox="0 0 340 340" width="340" height="340" style="overflow:visible;">
-              <!-- Segment 1: Initiation - top (#1b3a4b) -->
+            <svg viewBox="0 0 340 340" width="340" height="340" style="overflow:visible;filter:drop-shadow(0 6px 20px rgba(0,0,0,0.12));">
+              <!-- 5 perfectly equal 72° segments, starting from top (-90°) -->
               <path class="pie-lc-seg" id="plcs1" onclick="showPieLC(1)"
-                d="M170,170 L170,35 A135,135 0 0,1 297.6,102.5 Z"
+                d="M170,170 L170.0,35.0 A135,135 0 0,1 298.39,128.28 Z"
                 fill="#1b3a4b" stroke="white" stroke-width="3"/>
-              <!-- Segment 2: Planning - top right (green) -->
               <path class="pie-lc-seg" id="plcs2" onclick="showPieLC(2)"
-                d="M170,170 L297.6,102.5 A135,135 0 0,1 297.6,237.5 Z"
+                d="M170,170 L298.39,128.28 A135,135 0 0,1 249.35,279.22 Z"
                 fill="#2a7a4a" stroke="white" stroke-width="3"/>
-              <!-- Segment 3: Execution - bottom right (blue) -->
               <path class="pie-lc-seg" id="plcs3" onclick="showPieLC(3)"
-                d="M170,170 L297.6,237.5 A135,135 0 0,1 170,305 Z"
+                d="M170,170 L249.35,279.22 A135,135 0 0,1 90.65,279.22 Z"
                 fill="#1e3a8a" stroke="white" stroke-width="3"/>
-              <!-- Segment 4: Monitor - bottom left (gold) -->
               <path class="pie-lc-seg" id="plcs4" onclick="showPieLC(4)"
-                d="M170,170 L170,305 A135,135 0 0,1 42.4,237.5 Z"
+                d="M170,170 L90.65,279.22 A135,135 0 0,1 41.61,128.28 Z"
                 fill="#b47f1e" stroke="white" stroke-width="3"/>
-              <!-- Segment 5: Closure - top left (crimson) -->
               <path class="pie-lc-seg" id="plcs5" onclick="showPieLC(5)"
-                d="M170,170 L42.4,237.5 A135,135 0 0,1 170,35 Z"
+                d="M170,170 L41.61,128.28 A135,135 0 0,1 170.0,35.0 Z"
                 fill="#8b1a3a" stroke="white" stroke-width="3"/>
-              <!-- Center circle -->
-              <circle cx="170" cy="170" r="68" fill="#f5f3ee" stroke="white" stroke-width="4"/>
-              <text x="170" y="164" text-anchor="middle" font-size="10" font-weight="700" fill="#0d2137" font-family="'Cormorant Garamond',serif" letter-spacing="1.5">PROJECT</text>
-              <text x="170" y="180" text-anchor="middle" font-size="10" font-weight="700" fill="#0d2137" font-family="'Cormorant Garamond',serif" letter-spacing="1.5">LIFECYCLE</text>
-              <!-- Labels on segments -->
-              <text x="231.1" y="79.9" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="'Cormorant Garamond',serif">01</text>
-              <text x="231.1" y="92.9" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="'Cormorant Garamond',serif">Initiation</text>
-              <text x="268.9" y="196.1" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="'Cormorant Garamond',serif">02</text>
-              <text x="268.9" y="209.1" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="'Cormorant Garamond',serif">Planning</text>
-              <text x="170.0" y="268.0" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="'Cormorant Garamond',serif">03</text>
-              <text x="170.0" y="281.0" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="'Cormorant Garamond',serif">Execution</text>
-              <text x="71.1" y="196.1" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="'Cormorant Garamond',serif">04</text>
-              <text x="71.1" y="209.1" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="'Cormorant Garamond',serif">Monitor</text>
-              <text x="108.9" y="79.9" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="'Cormorant Garamond',serif">05</text>
-              <text x="108.9" y="92.9" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="'Cormorant Garamond',serif">Closure</text>
+              <!-- Center donut hole -->
+              <circle cx="170" cy="170" r="70" fill="#f5f3ee" stroke="white" stroke-width="5"/>
+              <text x="170" y="165" text-anchor="middle" font-size="9.5" font-weight="700" fill="#0d2137" font-family="'Cormorant Garamond',serif" letter-spacing="2">PROJECT</text>
+              <text x="170" y="179" text-anchor="middle" font-size="9.5" font-weight="700" fill="#0d2137" font-family="'Cormorant Garamond',serif" letter-spacing="2">LIFECYCLE</text>
+              <!-- Labels at midpoint of each segment at radius 104 -->
+              <text x="231.13" y="85" text-anchor="middle" font-size="8.5" font-weight="700" fill="white" font-family="'Cormorant Garamond',serif">01</text>
+              <text x="231.13" y="97" text-anchor="middle" font-size="8.5" font-weight="700" fill="white" font-family="'Cormorant Garamond',serif">Initiation</text>
+              <text x="265" y="202" text-anchor="middle" font-size="8.5" font-weight="700" fill="white" font-family="'Cormorant Garamond',serif">02</text>
+              <text x="265" y="214" text-anchor="middle" font-size="8.5" font-weight="700" fill="white" font-family="'Cormorant Garamond',serif">Planning</text>
+              <text x="170" y="265" text-anchor="middle" font-size="8.5" font-weight="700" fill="white" font-family="'Cormorant Garamond',serif">03</text>
+              <text x="170" y="277" text-anchor="middle" font-size="8.5" font-weight="700" fill="white" font-family="'Cormorant Garamond',serif">Execution</text>
+              <text x="75" y="202" text-anchor="middle" font-size="8.5" font-weight="700" fill="white" font-family="'Cormorant Garamond',serif">04</text>
+              <text x="75" y="214" text-anchor="middle" font-size="8.5" font-weight="700" fill="white" font-family="'Cormorant Garamond',serif">Monitor</text>
+              <text x="108.87" y="85" text-anchor="middle" font-size="8.5" font-weight="700" fill="white" font-family="'Cormorant Garamond',serif">05</text>
+              <text x="108.87" y="97" text-anchor="middle" font-size="8.5" font-weight="700" fill="white" font-family="'Cormorant Garamond',serif">Closure</text>
             </svg>
           </div>
 
