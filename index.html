@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ProjectWise Ireland — Project Management for SMEs & Charities</title>
+<title>ProjectWise Ireland - Project Management for SMEs & Charities</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -364,7 +364,9 @@ nav.scrolled .hamburger span { background: var(--ink); }
   font-size: 1.4rem;
   margin-bottom: 1.25rem;
   transition: background 0.4s;
+  padding: 11px;
 }
+.topic-icon-wrap svg { width: 100%; height: 100%; }
 .topic-title {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.3rem; font-weight: 600;
@@ -666,16 +668,22 @@ nav.scrolled .hamburger span { background: var(--ink); }
 .video-caption { position: relative; z-index: 1; color: rgba(255,255,255,0.75); font-size: 0.8rem; text-align: center; margin-top: 0.75rem; padding: 0 1rem; }
 
 /* ── SDG GRID ── */
-.sdg-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(120px,1fr)); gap: 0.6rem; margin: 2rem 0; }
+.sdg-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(130px,1fr)); gap: 0.75rem; margin: 2rem 0; }
 .sdg-pill {
-  border-radius: 8px; padding: 0.75rem; text-align: center;
-  color: white; font-size: 0.72rem; font-weight: 600; line-height: 1.4;
-  min-height: 72px; display: flex; flex-direction: column;
-  align-items: center; justify-content: center; gap: 0.25rem;
-  transition: transform 0.2s, box-shadow 0.2s;
+  border-radius: 12px; padding: 1rem 0.75rem; text-align: center;
+  color: white; font-size: 0.76rem; font-weight: 600; line-height: 1.4;
+  min-height: 80px; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 0.3rem;
+  opacity: 0.85;
+  transition: opacity 0.2s, transform 0.25s, box-shadow 0.25s;
+  position: relative; overflow: hidden;
 }
-.sdg-pill:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
-.sdg-num { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; opacity: 0.75; }
+.sdg-pill:hover {
+  opacity: 1;
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 14px 32px rgba(0,0,0,0.22);
+}
+.sdg-num { font-family: 'Cormorant Garamond', serif; font-size: 0.63rem; opacity: 0.7; letter-spacing: 0.1em; text-transform: uppercase; }
 
 /* ── AI TOOLS ── */
 .ai-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: rgba(247,245,240,0.08); border-radius: var(--r2); overflow: hidden; border: 1px solid rgba(247,245,240,0.08); }
@@ -917,7 +925,7 @@ button { cursor: pointer !important; }
       <strong>done brilliantly.</strong>
       <em>For Ireland.</em>
     </h1>
-    <p class="hero-sub">A comprehensive, evidence-based guide spanning 12 critical topics — built for small businesses and charities navigating Ireland's unique landscape. Academic rigour meets practical simplicity.</p>
+    <p class="hero-sub">A comprehensive, evidence-based guide spanning 12 critical topics - built for small businesses and charities navigating Ireland's unique landscape. Academic rigour meets practical simplicity.</p>
     <div class="hero-actions">
       <a href="#topics" class="btn-gold">Explore All 12 Modules ↓</a>
       <a href="#methodologies" class="btn-ghost">Find Your Method →</a>
@@ -988,7 +996,7 @@ button { cursor: pointer !important; }
         </div>
         <h2 style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;color:var(--ink);line-height:1.2;letter-spacing:-0.02em;margin-bottom:1.25rem;">A resource built from <em style="font-style:italic;color:var(--gold);">real study,</em> for real organisations.</h2>
         <p style="font-size:1rem;font-weight:300;color:rgba(10,10,15,0.65);line-height:1.9;margin-bottom:1rem;">As part of my MSc in Project Management at University College Dublin, I created this guide to provide a practical, accessible resource for small businesses and charities working in Ireland. Having studied project management theory and practice, I wanted to bridge the gap between academic frameworks and the real challenges faced by Irish organisations managing projects with limited resources.</p>
-        <p style="font-size:1rem;font-weight:300;color:rgba(10,10,15,0.65);line-height:1.9;margin-bottom:1.5rem;">Every module in this guide draws on peer-reviewed academic research and Irish regulatory context — from Pobal and the Charities Regulator to the EU AI Act and Ireland's Climate Action Plan 2024 — to make the content immediately useful for anyone managing a project in Ireland today.</p>
+        <p style="font-size:1rem;font-weight:300;color:rgba(10,10,15,0.65);line-height:1.9;margin-bottom:1.5rem;">Every module in this guide draws on peer-reviewed academic research and Irish regulatory context - from Pobal and the Charities Regulator to the EU AI Act and Ireland's Climate Action Plan 2024 - to make the content immediately useful for anyone managing a project in Ireland today.</p>
         <div style="display:flex;gap:2rem;flex-wrap:wrap;">
           <div style="display:flex;align-items:center;gap:0.5rem;">
             <span style="width:8px;height:8px;border-radius:50%;background:var(--green);display:inline-block;"></span>
@@ -1012,22 +1020,22 @@ button { cursor: pointer !important; }
     <div class="reveal">
       <div class="section-eyebrow">The Complete Guide</div>
       <h2 class="section-title">Twelve modules.<br><em>Everything you need.</em></h2>
-      <p class="section-lead">From assembling your first project team to deploying AI tools responsibly — every topic grounded in academic research and tailored to the Irish context.</p>
+      <p class="section-lead">From assembling your first project team to deploying AI tools responsibly - every topic grounded in academic research and tailored to the Irish context.</p>
     </div>
 
     <div class="topics-grid reveal">
-      <a href="#teams" class="topic-card"><div class="topic-num">01 — Foundation</div><div class="topic-icon-wrap">👥</div><div class="topic-title">Teams</div><div class="topic-desc">Building high-performing project teams in SME and charity environments.</div><div class="topic-arrow">↗</div></a>
-      <a href="#risk" class="topic-card"><div class="topic-num">02 — Foundation</div><div class="topic-icon-wrap">⚠️</div><div class="topic-title">Risk Management</div><div class="topic-desc">Identify, assess, and respond to project risks before they escalate.</div><div class="topic-arrow">↗</div></a>
-      <a href="#leadership" class="topic-card"><div class="topic-num">03 — People</div><div class="topic-icon-wrap">🧭</div><div class="topic-title">Leadership</div><div class="topic-desc">Servant, transformational and situational leadership in practice.</div><div class="topic-arrow">↗</div></a>
-      <a href="#ethics" class="topic-card"><div class="topic-num">04 — People</div><div class="topic-icon-wrap">⚖️</div><div class="topic-title">Ethics</div><div class="topic-desc">Ethical decision-making, GDPR, and integrity in procurement.</div><div class="topic-arrow">↗</div></a>
-      <a href="#sustainability" class="topic-card"><div class="topic-num">05 — Foundation</div><div class="topic-icon-wrap">🌿</div><div class="topic-title">Sustainability</div><div class="topic-desc">Embedding SDGs and Ireland's Climate Action Plan into every project.</div><div class="topic-arrow">↗</div></a>
-      <a href="#governance" class="topic-card"><div class="topic-num">06 — Foundation</div><div class="topic-icon-wrap">🏛️</div><div class="topic-title">Governance</div><div class="topic-desc">Charity Governance Code, Boards, CRO obligations, and accountability.</div><div class="topic-arrow">↗</div></a>
-      <a href="#strategy" class="topic-card"><div class="topic-num">07 — Thinking</div><div class="topic-icon-wrap">🎯</div><div class="topic-title">Strategy</div><div class="topic-desc">Logic Models, SWOT, Balanced Scorecard, and OKRs for small orgs.</div><div class="topic-arrow">↗</div></a>
-      <a href="#planning" class="topic-card"><div class="topic-num">08 — Foundation</div><div class="topic-icon-wrap">📅</div><div class="topic-title">Planning & Implementation</div><div class="topic-desc">WBS, Gantt charts, critical path, and free tools for lean teams.</div><div class="topic-arrow">↗</div></a>
-      <a href="#stakeholders" class="topic-card"><div class="topic-num">09 — People</div><div class="topic-icon-wrap">🤝</div><div class="topic-title">Stakeholders</div><div class="topic-desc">Map, engage and communicate with funders, boards and communities.</div><div class="topic-arrow">↗</div></a>
-      <a href="#methodologies" class="topic-card"><div class="topic-num">10 — Methods</div><div class="topic-icon-wrap">🔧</div><div class="topic-title">Methodologies</div><div class="topic-desc">Waterfall, Agile, PRINCE2, Lean — choosing the right approach.</div><div class="topic-arrow">↗</div></a>
-      <a href="#ai" class="topic-card"><div class="topic-num">11 — Digital</div><div class="topic-icon-wrap">🤖</div><div class="topic-title">AI in Projects</div><div class="topic-desc">Practical AI tools, the EU AI Act, and responsible deployment.</div><div class="topic-arrow">↗</div></a>
-      <a href="#references" class="topic-card"><div class="topic-num">12 — Academic</div><div class="topic-icon-wrap">📚</div><div class="topic-title">References</div><div class="topic-desc">31 academic citations and key Irish regulatory resources.</div><div class="topic-arrow">↗</div></a>
+      <a href="#teams" class="topic-card"><div class="topic-num">01 - Foundation</div><div class="topic-icon-wrap" style="background:#e8f5ef;color:#1a5c3a;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="18" r="2.5"/><circle cx="19" cy="18" r="2.5"/><line x1="12" y1="7.5" x2="5" y2="15.5"/><line x1="12" y1="7.5" x2="19" y2="15.5"/><line x1="7.5" y1="18" x2="16.5" y2="18"/></svg></div><div class="topic-title">Teams</div><div class="topic-desc">Building high-performing project teams in SME and charity environments.</div><div class="topic-arrow">↗</div></a>
+      <a href="#risk" class="topic-card"><div class="topic-num">02 - Foundation</div><div class="topic-icon-wrap" style="background:#fef3e2;color:#c8922a;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="8" y1="8" x2="16" y2="16"/><line x1="16" y1="8" x2="8" y2="16"/></svg></div><div class="topic-title">Risk Management</div><div class="topic-desc">Identify, assess, and respond to project risks before they escalate.</div><div class="topic-arrow">↗</div></a>
+      <a href="#leadership" class="topic-card"><div class="topic-num">03 - People</div><div class="topic-icon-wrap" style="background:#eef2ff;color:#2040a0;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><line x1="12" y1="16" x2="12" y2="8"/><polyline points="8,12 12,8 16,12"/></svg></div><div class="topic-title">Leadership</div><div class="topic-desc">Servant, transformational and situational leadership in practice.</div><div class="topic-arrow">↗</div></a>
+      <a href="#ethics" class="topic-card"><div class="topic-num">04 - People</div><div class="topic-icon-wrap" style="background:#f5eef8;color:#6b2fa0;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><line x1="12" y1="3" x2="12" y2="21"/><rect x="3" y="3" width="5" height="5" rx="1"/><rect x="16" y="16" width="5" height="5" rx="1"/><line x1="5.5" y1="8" x2="5.5" y2="13"/><line x1="18.5" y1="11" x2="18.5" y2="16"/></svg></div><div class="topic-title">Ethics</div><div class="topic-desc">Ethical decision-making, GDPR, and integrity in procurement.</div><div class="topic-arrow">↗</div></a>
+      <a href="#sustainability" class="topic-card"><div class="topic-num">05 - Foundation</div><div class="topic-icon-wrap" style="background:#e8f5ef;color:#1a5c3a;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg></div><div class="topic-title">Sustainability</div><div class="topic-desc">Embedding SDGs and Ireland's Climate Action Plan into every project.</div><div class="topic-arrow">↗</div></a>
+      <a href="#governance" class="topic-card"><div class="topic-num">06 - Foundation</div><div class="topic-icon-wrap" style="background:#fef3e2;color:#c8922a;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="9" y="2" width="6" height="5" rx="1"/><rect x="2" y="10" width="6" height="5" rx="1"/><rect x="16" y="10" width="6" height="5" rx="1"/><rect x="9" y="17" width="6" height="5" rx="1"/><line x1="12" y1="7" x2="12" y2="10"/><line x1="5" y1="15" x2="9" y2="19.5"/><line x1="19" y1="15" x2="15" y2="19.5"/></svg></div><div class="topic-title">Governance</div><div class="topic-desc">Charity Governance Code, Boards, CRO obligations, and accountability.</div><div class="topic-arrow">↗</div></a>
+      <a href="#strategy" class="topic-card"><div class="topic-num">07 - Thinking</div><div class="topic-icon-wrap" style="background:#e8f5ef;color:#1a5c3a;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg></div><div class="topic-title">Strategy</div><div class="topic-desc">Logic Models, SWOT, Balanced Scorecard, and OKRs for small orgs.</div><div class="topic-arrow">↗</div></a>
+      <a href="#planning" class="topic-card"><div class="topic-num">08 - Foundation</div><div class="topic-icon-wrap" style="background:#eef2ff;color:#2040a0;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="9" x2="9" y2="21"/></svg></div><div class="topic-title">Planning & Implementation</div><div class="topic-desc">WBS, Gantt charts, critical path, and free tools for lean teams.</div><div class="topic-arrow">↗</div></a>
+      <a href="#stakeholders" class="topic-card"><div class="topic-num">09 - People</div><div class="topic-icon-wrap" style="background:#f5eef8;color:#6b2fa0;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="2"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="9"/></svg></div><div class="topic-title">Stakeholders</div><div class="topic-desc">Map, engage and communicate with funders, boards and communities.</div><div class="topic-arrow">↗</div></a>
+      <a href="#methodologies" class="topic-card"><div class="topic-num">10 - Methods</div><div class="topic-icon-wrap" style="background:#fef3e2;color:#c8922a;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="2" y="4" width="6" height="5" rx="1"/><rect x="16" y="4" width="6" height="5" rx="1"/><rect x="9" y="15" width="6" height="5" rx="1"/><line x1="8" y1="6.5" x2="16" y2="6.5"/><polyline points="14,4.5 16,6.5 14,8.5"/><line x1="5" y1="9" x2="12" y2="15"/><line x1="19" y1="9" x2="12" y2="15"/></svg></div><div class="topic-title">Methodologies</div><div class="topic-desc">Waterfall, Agile, PRINCE2, Lean - choosing the right approach.</div><div class="topic-arrow">↗</div></a>
+      <a href="#ai" class="topic-card"><div class="topic-num">11 - Digital</div><div class="topic-icon-wrap" style="background:#e8f5ef;color:#1a5c3a;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="4" y="4" width="16" height="16" rx="2"/><circle cx="9" cy="9" r="1.5" fill="currentColor"/><circle cx="15" cy="9" r="1.5" fill="currentColor"/><circle cx="9" cy="15" r="1.5" fill="currentColor"/><circle cx="15" cy="15" r="1.5" fill="currentColor"/><line x1="9" y1="9" x2="15" y2="9"/><line x1="9" y1="15" x2="15" y2="15"/><line x1="9" y1="9" x2="9" y2="15"/><line x1="15" y1="9" x2="15" y2="15"/></svg></div><div class="topic-title">AI in Projects</div><div class="topic-desc">Practical AI tools, the EU AI Act, and responsible deployment.</div><div class="topic-arrow">↗</div></a>
+      <a href="#references" class="topic-card"><div class="topic-num">12 - Academic</div><div class="topic-icon-wrap" style="background:#eef2ff;color:#2040a0;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="9" y1="7" x2="15" y2="7"/><line x1="9" y1="11" x2="15" y2="11"/><line x1="9" y1="15" x2="12" y2="15"/></svg></div><div class="topic-title">References</div><div class="topic-desc">31 academic citations and key Irish regulatory resources.</div><div class="topic-arrow">↗</div></a>
     </div>
   </div>
 </section>
@@ -1037,7 +1045,7 @@ button { cursor: pointer !important; }
   <div class="container">
     <div class="module-header reveal">
       <div>
-        <div class="module-num">Module 01 — Foundation</div>
+        <div class="module-num">Module 01 - Foundation</div>
         <h2 class="section-title">Building Effective<br><em>Project Teams</em></h2>
         <p class="section-lead">In small organisations, the team IS the project. Understanding how teams form, conflict, and perform is foundational to everything else.</p>
         <div class="callout callout-green">
@@ -1053,7 +1061,7 @@ button { cursor: pointer !important; }
               <a href="https://www.youtube.com/watch?v=-RwkZxGPQb8" target="_blank" class="play-btn-wrap">▶</a>
               <div class="video-caption">Tuckman's Stages of Group Development<br><span style="font-size:0.72rem;opacity:0.6;">Mind Tools · 5 min</span></div>
             </div>
-            <p>An illustrated overview of each stage with practical scenarios — ideal for sharing at project kickoff with your team.</p>
+            <p>An illustrated overview of each stage with practical scenarios - ideal for sharing at project kickoff with your team.</p>
           </div>
         </div>
       </div>
@@ -1063,7 +1071,7 @@ button { cursor: pointer !important; }
       <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:600;margin-bottom:2rem;color:var(--ink);">Tuckman's Five Stages <sup class="cite">1</sup></h3>
       <div class="timeline">
         <div class="tl-item"><div class="tl-dot"></div><div class="tl-phase">Stage 1</div><div class="tl-title">Forming</div><div class="tl-body">Politeness and uncertainty. Clarify roles, set ground rules, and establish expectations. In charity settings, this is where volunteers decide if they're committed.</div></div>
-        <div class="tl-item"><div class="tl-dot" style="border-color:var(--gold);"></div><div class="tl-phase" style="color:var(--gold);">Stage 2</div><div class="tl-title">Storming</div><div class="tl-body">Conflict emerges as people assert working styles. This is normal and necessary — channel it through structured retrospectives and active listening.</div></div>
+        <div class="tl-item"><div class="tl-dot" style="border-color:var(--gold);"></div><div class="tl-phase" style="color:var(--gold);">Stage 2</div><div class="tl-title">Storming</div><div class="tl-body">Conflict emerges as people assert working styles. This is normal and necessary - channel it through structured retrospectives and active listening.</div></div>
         <div class="tl-item"><div class="tl-dot" style="border-color:#2040a0;"></div><div class="tl-phase" style="color:#2040a0;">Stage 3</div><div class="tl-title">Norming</div><div class="tl-body">Shared norms develop. Formalise agreements on decision-making, conflict resolution, and workload sharing.</div></div>
         <div class="tl-item"><div class="tl-dot" style="border-color:var(--green2);"></div><div class="tl-phase" style="color:var(--green2);">Stage 4</div><div class="tl-title">Performing</div><div class="tl-body">High trust, high output. Shift from directive leadership to facilitation. Protect the team's focus from scope creep.</div></div>
         <div class="tl-item" style="padding-bottom:0;"><div class="tl-dot" style="border-color:rgba(10,10,15,0.25);"></div><div class="tl-phase" style="color:rgba(10,10,15,0.4);">Stage 5</div><div class="tl-title">Adjourning</div><div class="tl-body">Celebrate achievements, capture lessons learned, conduct proper handoffs. In volunteer teams, a poor adjournment means volunteers don't return next time.</div></div>
@@ -1095,9 +1103,9 @@ button { cursor: pointer !important; }
   <div class="container">
     <div class="module-header reveal">
       <div>
-        <div class="module-num">Module 02 — Foundation</div>
+        <div class="module-num">Module 02 - Foundation</div>
         <h2 class="section-title">Risk<br><em>Management</em></h2>
-        <p class="section-lead">Risk is "an uncertain event that, if it occurs, has a positive or negative effect on project objectives" (PMI PMBOK® 7th ed.) <sup class="cite">4</sup> — note that risks can be opportunities too.</p>
+        <p class="section-lead">Risk is "an uncertain event that, if it occurs, has a positive or negative effect on project objectives" (PMI PMBOK® 7th ed.) <sup class="cite">4</sup> - note that risks can be opportunities too.</p>
         <div class="callout callout-gold">
           <div class="callout-label">⚡ Irish-Specific Risks</div>
           <p>GDPR / DPC enforcement · Planning permission delays (An Bord Pleanála) · Grant conditionality (Pobal, Tusla, LEADER) · Brexit supply chain disruption · Volunteer turnover · Cash flow gaps between grant tranches</p>
@@ -1146,26 +1154,26 @@ button { cursor: pointer !important; }
 <section id="leadership" class="section section-cream" style="scroll-margin-top:72px;">
   <div class="container">
     <div class="reveal">
-      <div class="module-num">Module 03 — People</div>
+      <div class="module-num">Module 03 - People</div>
       <h2 class="section-title">Leadership</h2>
     </div>
 
-    <div class="pull-quote reveal">"Management is doing things right; leadership is doing the right things."<cite>— Peter Drucker (1967), The Effective Executive <sup class="cite">5</sup></cite></div>
+    <div class="pull-quote reveal">"Management is doing things right; leadership is doing the right things."<cite>- Peter Drucker (1967), The Effective Executive <sup class="cite">5</sup></cite></div>
 
     <div class="module-header reveal" style="margin-top:3rem;">
       <div>
-        <p style="font-size:1rem;font-weight:300;color:rgba(10,10,15,0.65);line-height:1.8;margin-bottom:2rem;">The most technically perfect project plan will fail without effective leadership. In Ireland's SME and charity sectors, project managers are frequently player-coaches — doing the work while also leading it.</p>
+        <p style="font-size:1rem;font-weight:300;color:rgba(10,10,15,0.65);line-height:1.8;margin-bottom:2rem;">The most technically perfect project plan will fail without effective leadership. In Ireland's SME and charity sectors, project managers are frequently player-coaches - doing the work while also leading it.</p>
         <div class="acc">
           <div class="acc-item open">
             <button class="acc-btn" onclick="toggleAcc(this)">Servant Leadership <span style="font-size:0.72rem;color:rgba(10,10,15,0.4);margin-left:0.5rem;">Most effective for volunteer teams</span><div class="acc-icon">+</div></button>
             <div class="acc-body" style="max-height:400px;">
-              <div class="acc-inner"><p>Greenleaf (1970) <sup class="cite">6</sup> coined servant leadership — the leader exists to serve the team. For charity PMs working with volunteers, ask: "What do you need to succeed?" rather than "Here's what I need from you."</p><p>Practical applications: removing blockers; advocating for resources upward; celebrating others' contributions publicly; taking personal responsibility for failures.</p></div>
+              <div class="acc-inner"><p>Greenleaf (1970) <sup class="cite">6</sup> coined servant leadership - the leader exists to serve the team. For charity PMs working with volunteers, ask: "What do you need to succeed?" rather than "Here's what I need from you."</p><p>Practical applications: removing blockers; advocating for resources upward; celebrating others' contributions publicly; taking personal responsibility for failures.</p></div>
             </div>
           </div>
           <div class="acc-item">
             <button class="acc-btn" onclick="toggleAcc(this)">Transformational Leadership <span style="font-size:0.72rem;color:rgba(10,10,15,0.4);margin-left:0.5rem;">Change & innovation contexts</span><div class="acc-icon">+</div></button>
             <div class="acc-body">
-              <div class="acc-inner"><p>Bass & Avolio (1994) <sup class="cite">7</sup> describe transformational leaders as inspiring through vision, challenging assumptions, and developing individuals. Highly effective when your project requires culture change — new systems, digitalisation, or shifts in service delivery.</p></div>
+              <div class="acc-inner"><p>Bass & Avolio (1994) <sup class="cite">7</sup> describe transformational leaders as inspiring through vision, challenging assumptions, and developing individuals. Highly effective when your project requires culture change - new systems, digitalisation, or shifts in service delivery.</p></div>
             </div>
           </div>
           <div class="acc-item">
@@ -1177,7 +1185,7 @@ button { cursor: pointer !important; }
           <div class="acc-item">
             <button class="acc-btn" onclick="toggleAcc(this)">Emotional Intelligence (EQ) <span style="font-size:0.72rem;color:rgba(10,10,15,0.4);margin-left:0.5rem;">Foundation of all leadership</span><div class="acc-icon">+</div></button>
             <div class="acc-body">
-              <div class="acc-inner"><p>Goleman (1995) <sup class="cite">9</sup> demonstrated that EQ — self-awareness, self-regulation, motivation, empathy, social skills — is a stronger predictor of leadership effectiveness than IQ. In small organisations where relationships are intense, EQ is arguably the PM's most critical capability.</p></div>
+              <div class="acc-inner"><p>Goleman (1995) <sup class="cite">9</sup> demonstrated that EQ - self-awareness, self-regulation, motivation, empathy, social skills - is a stronger predictor of leadership effectiveness than IQ. In small organisations where relationships are intense, EQ is arguably the PM's most critical capability.</p></div>
             </div>
           </div>
         </div>
@@ -1190,12 +1198,12 @@ button { cursor: pointer !important; }
               <a href="https://www.youtube.com/watch?v=qp0HIF3SfI4" target="_blank" class="play-btn-wrap">▶</a>
               <div class="video-caption">How Great Leaders Inspire Action<br><span style="font-size:0.72rem;opacity:0.6;">TED · 18 min · 50M+ views</span></div>
             </div>
-            <p>Sinek's Golden Circle — Why → How → What — directly applies to how you frame your project's purpose to engage volunteers and community stakeholders.</p>
+            <p>Sinek's Golden Circle - Why → How → What - directly applies to how you frame your project's purpose to engage volunteers and community stakeholders.</p>
           </div>
         </div>
         <div class="callout callout-green" style="margin-top:1.5rem;">
           <div class="callout-label">🇮🇪 Irish Leadership Resources</div>
-          <p><strong>IMI:</strong> Leadership programmes for Irish SMEs — imi.ie<br><strong>The Wheel:</strong> Leadership development for charity sector — wheel.ie<br><strong>IBEC SmallFirms:</strong> Owner-manager resources — ibec.ie</p>
+          <p><strong>IMI:</strong> Leadership programmes for Irish SMEs - imi.ie<br><strong>The Wheel:</strong> Leadership development for charity sector - wheel.ie<br><strong>IBEC SmallFirms:</strong> Owner-manager resources - ibec.ie</p>
         </div>
       </div>
     </div>
@@ -1206,17 +1214,17 @@ button { cursor: pointer !important; }
 <section id="ethics" class="section section-ink" style="scroll-margin-top:72px;">
   <div class="container">
     <div class="reveal">
-      <div class="module-num" style="color:var(--gold2);">Module 04 — People</div>
+      <div class="module-num" style="color:var(--gold2);">Module 04 - People</div>
       <h2 class="section-title light">Ethics in<br><em>Project Management</em></h2>
-      <p class="section-lead light">Ethics are not a compliance checkbox — they are the foundation of trust with your beneficiaries, funders, and community. For charities, ethical failure can be existential.</p>
+      <p class="section-lead light">Ethics are not a compliance checkbox - they are the foundation of trust with your beneficiaries, funders, and community. For charities, ethical failure can be existential.</p>
     </div>
     <div class="card-grid-4 reveal">
-      <div class="card dark"><div style="font-size:1.4rem;margin-bottom:1rem;">🎯</div><div style="font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--green2);margin-bottom:0.5rem;">Responsibility</div><p class="ai-desc">Own your decisions and consequences — including mistakes. Report problems early; don't bury them.</p></div>
+      <div class="card dark"><div style="font-size:1.4rem;margin-bottom:1rem;">🎯</div><div style="font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--green2);margin-bottom:0.5rem;">Responsibility</div><p class="ai-desc">Own your decisions and consequences - including mistakes. Report problems early; don't bury them.</p></div>
       <div class="card dark"><div style="font-size:1.4rem;margin-bottom:1rem;">🤝</div><div style="font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold2);margin-bottom:0.5rem;">Respect</div><p class="ai-desc">Honour diverse perspectives. In multilingual Irish communities, this requires active, deliberate effort.</p></div>
-      <div class="card dark"><div style="font-size:1.4rem;margin-bottom:1rem;">⚖️</div><div style="font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#8888ff;margin-bottom:0.5rem;">Fairness</div><p class="ai-desc">Transparent, unbiased decisions — especially in procurement and hiring. Document every choice.</p></div>
+      <div class="card dark"><div style="font-size:1.4rem;margin-bottom:1rem;">⚖️</div><div style="font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#8888ff;margin-bottom:0.5rem;">Fairness</div><p class="ai-desc">Transparent, unbiased decisions - especially in procurement and hiring. Document every choice.</p></div>
       <div class="card dark"><div style="font-size:1.4rem;margin-bottom:1rem;">💡</div><div style="font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#ff9999;margin-bottom:0.5rem;">Honesty</div><p class="ai-desc">Accurate reporting to funders. No spin on outcomes. Charities must report failures alongside successes.</p></div>
     </div>
-    <div class="pull-quote light reveal">"Ethics is not what we say — it's what we do when no one is watching."<cite>— Treviño & Nelson, Managing Business Ethics, 7th ed. (2017) <sup class="cite">13</sup></cite></div>
+    <div class="pull-quote light reveal">"Ethics is not what we say - it's what we do when no one is watching."<cite>- Treviño & Nelson, Managing Business Ethics, 7th ed. (2017) <sup class="cite">13</sup></cite></div>
     <div class="card dark reveal" style="margin-top:1rem;">
       <div style="font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold2);margin-bottom:1rem;">🇮🇪 GDPR & The Data Protection Commission</div>
       <p class="ai-desc" style="line-height:1.8;">Ireland's DPC is one of Europe's most active GDPR regulators. Any project handling personal data requires: a Data Protection Impact Assessment (DPIA) · a legal basis for processing · a data retention policy · a 72-hour breach notification procedure. Consult <strong style="color:rgba(247,245,240,0.8);">dataprotection.ie</strong> for official guidance.</p>
@@ -1229,12 +1237,12 @@ button { cursor: pointer !important; }
   <div class="container">
     <div class="module-header reveal">
       <div>
-        <div class="module-num">Module 05 — Foundation</div>
+        <div class="module-num">Module 05 - Foundation</div>
         <h2 class="section-title">Sustainability &<br><em>the Environment</em></h2>
-        <p class="section-lead">Ireland has legally binding targets — 51% emissions reduction by 2030. Every organisation, regardless of size, has a role. Projects are the mechanism through which organisations change.</p>
+        <p class="section-lead">Ireland has legally binding targets - 51% emissions reduction by 2030. Every organisation, regardless of size, has a role. Projects are the mechanism through which organisations change.</p>
         <div class="callout callout-green">
-          <div class="callout-label">Triple Bottom Line — Elkington (1994) <sup class="cite">14</sup></div>
-          <p>Sustainable projects balance <strong>Planet</strong> (environmental impact), <strong>People</strong> (social impact), and <strong>Profit / Purpose</strong> (financial viability). Report against all three — not just finances.</p>
+          <div class="callout-label">Triple Bottom Line - Elkington (1994) <sup class="cite">14</sup></div>
+          <p>Sustainable projects balance <strong>Planet</strong> (environmental impact), <strong>People</strong> (social impact), and <strong>Profit / Purpose</strong> (financial viability). Report against all three - not just finances.</p>
         </div>
         <div class="callout callout-gold" style="margin-top:1rem;">
           <div class="callout-label">🇮🇪 Climate Action Plan 2024</div>
@@ -1244,18 +1252,18 @@ button { cursor: pointer !important; }
       <div>
         <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;margin-bottom:1.25rem;">UN Sustainable Development Goals</h3>
         <div class="sdg-grid">
-          <div class="sdg-pill" style="background:#E5243B;"><div class="sdg-num">SDG 1</div>No Poverty</div>
-          <div class="sdg-pill" style="background:#DDA63A;"><div class="sdg-num">SDG 2</div>Zero Hunger</div>
-          <div class="sdg-pill" style="background:#4C9F38;"><div class="sdg-num">SDG 3</div>Good Health</div>
-          <div class="sdg-pill" style="background:#C5192D;"><div class="sdg-num">SDG 4</div>Education</div>
-          <div class="sdg-pill" style="background:#FF3A21;"><div class="sdg-num">SDG 5</div>Gender Equality</div>
-          <div class="sdg-pill" style="background:#26BDE2;"><div class="sdg-num">SDG 6</div>Clean Water</div>
-          <div class="sdg-pill" style="background:#FCC30B;color:#1a1a1a;"><div class="sdg-num">SDG 7</div>Clean Energy</div>
-          <div class="sdg-pill" style="background:#A21942;"><div class="sdg-num">SDG 8</div>Decent Work</div>
-          <div class="sdg-pill" style="background:#FD6925;"><div class="sdg-num">SDG 9</div>Innovation</div>
-          <div class="sdg-pill" style="background:#DD1367;"><div class="sdg-num">SDG 10</div>Reduced Inequality</div>
-          <div class="sdg-pill" style="background:#FD9D24;color:#1a1a1a;"><div class="sdg-num">SDG 11</div>Sustainable Cities</div>
-          <div class="sdg-pill" style="background:#3F7E44;"><div class="sdg-num">SDG 13</div>Climate Action</div>
+          <div class="sdg-pill" style="background:#b8354a;"><div class="sdg-num">SDG 1</div>No Poverty</div>
+          <div class="sdg-pill" style="background:#9e7520;"><div class="sdg-num">SDG 2</div>Zero Hunger</div>
+          <div class="sdg-pill" style="background:#357028;"><div class="sdg-num">SDG 3</div>Good Health</div>
+          <div class="sdg-pill" style="background:#901220;"><div class="sdg-num">SDG 4</div>Education</div>
+          <div class="sdg-pill" style="background:#b82812;"><div class="sdg-num">SDG 5</div>Gender Equality</div>
+          <div class="sdg-pill" style="background:#1585a0;"><div class="sdg-num">SDG 6</div>Clean Water</div>
+          <div class="sdg-pill" style="background:#a88405;color:#1a1a1a;"><div class="sdg-num">SDG 7</div>Clean Energy</div>
+          <div class="sdg-pill" style="background:#6e1028;"><div class="sdg-num">SDG 8</div>Decent Work</div>
+          <div class="sdg-pill" style="background:#b84518;"><div class="sdg-num">SDG 9</div>Innovation</div>
+          <div class="sdg-pill" style="background:#9a0c46;"><div class="sdg-num">SDG 10</div>Reduced Inequality</div>
+          <div class="sdg-pill" style="background:#b86c16;color:#1a1a1a;"><div class="sdg-num">SDG 11</div>Sustainable Cities</div>
+          <div class="sdg-pill" style="background:#28522c;"><div class="sdg-num">SDG 13</div>Climate Action</div>
         </div>
         <a href="https://www.un.org/sustainabledevelopment/sustainable-development-goals/" target="_blank" rel="noopener noreferrer" class="btn-gold" style="margin-top:1.5rem;font-size:0.82rem;padding:0.75rem 1.75rem;">Explore All 17 SDGs →</a>
       </div>
@@ -1267,7 +1275,7 @@ button { cursor: pointer !important; }
 <section id="governance" class="section section-cream" style="scroll-margin-top:72px;">
   <div class="container">
     <div class="reveal">
-      <div class="module-num">Module 06 — Foundation</div>
+      <div class="module-num">Module 06 - Foundation</div>
       <h2 class="section-title">Governance</h2>
       <p class="section-lead">Governance in project management defines how decisions are made, how authority is delegated, and how accountability is maintained throughout a project. For Irish SMEs and charities, this includes both internal project governance structures and external regulatory compliance.</p>
     </div>
@@ -1291,7 +1299,7 @@ button { cursor: pointer !important; }
             </div>
             <div class="card" style="border-top:3px solid #600060;">
               <div style="font-weight:700;color:#600060;font-size:0.82rem;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.5rem;">Independent Evaluation</div>
-              <p style="font-size:0.85rem;color:rgba(10,10,15,0.65);margin:0;line-height:1.7;">Required by Pobal, LEADER, and most EU-funded projects. External evaluators assess whether outcomes were achieved and represent value for money. Budget for this from the start — typically 5–8% of project cost.</p>
+              <p style="font-size:0.85rem;color:rgba(10,10,15,0.65);margin:0;line-height:1.7;">Required by Pobal, LEADER, and most EU-funded projects. External evaluators assess whether outcomes were achieved and represent value for money. Budget for this from the start - typically 5–8% of project cost.</p>
             </div>
           </div>
         </div>
@@ -1299,7 +1307,7 @@ button { cursor: pointer !important; }
         <div class="timeline">
           <div class="tl-item"><div class="tl-dot"></div><div class="tl-phase">Principle 1</div><div class="tl-title">Advancing your charitable purpose</div><div class="tl-body">Every project must demonstrably serve your charitable objects. Mission drift is a governance failure.</div></div>
           <div class="tl-item"><div class="tl-dot"></div><div class="tl-phase">Principle 2</div><div class="tl-title">Behaving with integrity</div><div class="tl-body">Board members act in the charity's interest, manage conflicts of interest, and set the ethical tone.</div></div>
-          <div class="tl-item"><div class="tl-dot"></div><div class="tl-phase">Principle 3</div><div class="tl-title">Leading people</div><div class="tl-body">Effective governance of staff and volunteers — proper HR policies, safeguarding, dignity at work.</div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-phase">Principle 3</div><div class="tl-title">Leading people</div><div class="tl-body">Effective governance of staff and volunteers - proper HR policies, safeguarding, dignity at work.</div></div>
           <div class="tl-item"><div class="tl-dot"></div><div class="tl-phase">Principle 4</div><div class="tl-title">Exercising control</div><div class="tl-body">Financial controls, risk management, legal compliance. The Board is ultimately responsible for all project finances.</div></div>
           <div class="tl-item"><div class="tl-dot"></div><div class="tl-phase">Principle 5</div><div class="tl-title">Working effectively</div><div class="tl-body">Board composition, induction, evaluation, and succession planning. A dysfunctional Board kills good projects.</div></div>
           <div class="tl-item" style="padding-bottom:0;"><div class="tl-dot" style="border-color:var(--gold);"></div><div class="tl-phase" style="color:var(--gold);">Principle 6</div><div class="tl-title">Being accountable and transparent</div><div class="tl-body">Annual reports, audited accounts, and public communications. Charities must file annual returns with the Charities Regulator.</div></div>
@@ -1307,14 +1315,14 @@ button { cursor: pointer !important; }
       </div>
       <div>
         <div class="callout callout-gold">
-          <div class="callout-label">🏛️ CRO & Charities Regulator — Key Obligations</div>
+          <div class="callout-label">🏛️ CRO & Charities Regulator - Key Obligations</div>
           <p><strong>Companies:</strong> Annual return to CRO within 28 days of AGM. Late filing incurs penalties and potential strike-off.<br><br><strong>Charities:</strong> Register with Charities Regulator; file Annual Report within 10 months of financial year end; maintain a Register of Interests for trustees.<br><br><strong>Both:</strong> GDPR registration with DPC; Revenue CHY status for tax exemption.</p>
         </div>
         <div class="media-card" style="margin-top:1.5rem;">
-          <div class="media-header gold"><span style="font-size:1rem;">🔗</span><span class="media-title-text">Charities Regulator — Governance Code</span><span class="media-label">OFFICIAL</span></div>
+          <div class="media-header gold"><span style="font-size:1rem;">🔗</span><span class="media-title-text">Charities Regulator - Governance Code</span><span class="media-label">OFFICIAL</span></div>
           <div class="media-body">
-            <p>Ireland's Charities Regulator has published a comprehensive Governance Code — a practical, step-by-step guide adopted by most major Irish funders as a requirement.</p>
-            <a href="https://www.charityregulator.ie" target="_blank" rel="noopener noreferrer" class="btn-gold" style="font-size:0.82rem;padding:0.65rem 1.5rem;">Visit Charities Regulator →</a>
+            <p>Ireland's Charities Regulator has published a comprehensive Governance Code - a practical, step-by-step guide adopted by most major Irish funders as a requirement.</p>
+            <a href="https://www.charitiesregulator.ie" target="_blank" rel="noopener noreferrer" class="btn-gold" style="font-size:0.82rem;padding:0.65rem 1.5rem;">Visit Charities Regulator →</a>
           </div>
         </div>
       </div>
@@ -1326,22 +1334,55 @@ button { cursor: pointer !important; }
 <section id="strategy" class="section section-white" style="scroll-margin-top:72px;">
   <div class="container">
     <div class="reveal">
-      <div class="module-num">Module 07 — Thinking</div>
+      <div class="module-num">Module 07 - Thinking</div>
       <h2 class="section-title">Strategy &<br><em>Alignment</em></h2>
       <p class="section-lead">A project without strategic alignment is busywork. Connect every project to your organisation's long-term mission using these proven frameworks.</p>
     </div>
     <div class="reveal">
       <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;margin-bottom:1.5rem;">The Logic Model <sup class="cite">16</sup></h3>
-      <div class="logic-chain">
-        <div class="logic-step" style="background:var(--ink);color:white;"><div class="logic-step-label">Inputs</div><div class="logic-step-text">Staff, volunteers, money, facilities, expertise</div></div>
-        <div class="logic-arrow">→</div>
-        <div class="logic-step" style="background:var(--green);color:white;"><div class="logic-step-label">Activities</div><div class="logic-step-text">What you actually do day-to-day</div></div>
-        <div class="logic-arrow">→</div>
-        <div class="logic-step" style="background:var(--gold);color:white;"><div class="logic-step-label">Outputs</div><div class="logic-step-text">Measurable deliverables and products</div></div>
-        <div class="logic-arrow">→</div>
-        <div class="logic-step" style="background:#2040a0;color:white;"><div class="logic-step-label">Outcomes</div><div class="logic-step-text">Changes for beneficiaries and communities</div></div>
-        <div class="logic-arrow">→</div>
-        <div class="logic-step" style="background:#600060;color:white;"><div class="logic-step-label">Impact</div><div class="logic-step-text">Long-term societal change</div></div>
+      <style>
+        .lm-chain { display:flex; align-items:stretch; gap:0; overflow-x:auto; border-radius:12px; overflow:hidden; }
+        .lm-box {
+          flex:1; min-width:120px; padding:1.25rem 1rem;
+          display:flex; flex-direction:column; gap:0.5rem;
+          position:relative;
+        }
+        .lm-box::after {
+          content:'→';
+          position:absolute; right:-12px; top:50%;
+          transform:translateY(-50%);
+          font-size:1.1rem; color:rgba(255,255,255,0.5);
+          z-index:2; font-weight:300;
+        }
+        .lm-box:last-child::after { display:none; }
+        .lm-label {
+          font-size:0.6rem; font-weight:700; letter-spacing:0.14em;
+          text-transform:uppercase; opacity:0.75;
+          font-family:'Cormorant Garamond',serif;
+        }
+        .lm-text { font-size:0.82rem; font-weight:500; line-height:1.5; color:white; }
+      </style>
+      <div class="lm-chain">
+        <div class="lm-box" style="background:#0d2137;">
+          <div class="lm-label" style="color:rgba(255,255,255,0.65);">INPUTS</div>
+          <div class="lm-text">Staff, volunteers, money, facilities, expertise</div>
+        </div>
+        <div class="lm-box" style="background:#1a5c3a;">
+          <div class="lm-label" style="color:rgba(255,255,255,0.65);">ACTIVITIES</div>
+          <div class="lm-text">What you actually do day-to-day</div>
+        </div>
+        <div class="lm-box" style="background:#b47f1e;">
+          <div class="lm-label" style="color:rgba(255,255,255,0.65);">OUTPUTS</div>
+          <div class="lm-text">Measurable deliverables and products</div>
+        </div>
+        <div class="lm-box" style="background:#1e3a8a;">
+          <div class="lm-label" style="color:rgba(255,255,255,0.65);">OUTCOMES</div>
+          <div class="lm-text">Changes for beneficiaries and communities</div>
+        </div>
+        <div class="lm-box" style="background:#5b1a72;">
+          <div class="lm-label" style="color:rgba(255,255,255,0.65);">IMPACT</div>
+          <div class="lm-text">Long-term societal change</div>
+        </div>
       </div>
     </div>
     <div class="module-header reveal" style="margin-top:4rem;">
@@ -1349,7 +1390,7 @@ button { cursor: pointer !important; }
         <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;margin-bottom:1.25rem;">SWOT Analysis <sup class="cite">17</sup></h3>
         <div class="swot">
           <div class="swot-q swot-s"><div class="swot-q-label">Strengths</div><p>Internal positive factors. What does your team do exceptionally well? What assets and relationships do you have?</p></div>
-          <div class="swot-q swot-w"><div class="swot-q-label">Weaknesses</div><p>Internal negative factors. Skill gaps, resource constraints, capacity limits. Be brutally honest — this is where most plans fail.</p></div>
+          <div class="swot-q swot-w"><div class="swot-q-label">Weaknesses</div><p>Internal negative factors. Skill gaps, resource constraints, capacity limits. Be brutally honest - this is where most plans fail.</p></div>
           <div class="swot-q swot-o"><div class="swot-q-label">Opportunities</div><p>External positive factors. New EU funding rounds, political support, demographic changes, digital tools.</p></div>
           <div class="swot-q swot-t"><div class="swot-q-label">Threats</div><p>External negative factors. Funding cuts, policy changes, competition, inflation, volunteer fatigue.</p></div>
         </div>
@@ -1357,7 +1398,7 @@ button { cursor: pointer !important; }
       <div>
         <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;margin-bottom:1.25rem;">OKRs in Practice <sup class="cite">19</sup></h3>
         <div class="card" style="background:var(--cream);">
-          <div style="font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink3);margin-bottom:1rem;">Example OKR — Community Digital Skills Project</div>
+          <div style="font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink3);margin-bottom:1rem;">Example OKR - Community Digital Skills Project</div>
           <div style="font-weight:700;color:var(--ink);margin-bottom:1.25rem;font-size:0.95rem;">🎯 Objective: Transform digital access for older adults in our county</div>
           <div style="display:flex;flex-direction:column;gap:0.75rem;">
             <div style="display:flex;gap:0.75rem;align-items:flex-start;"><span style="background:var(--green);color:white;font-size:0.65rem;font-weight:700;padding:0.2rem 0.5rem;border-radius:4px;flex-shrink:0;margin-top:2px;font-family:'JetBrains Mono',monospace;">KR1</span><span style="font-size:0.88rem;color:rgba(10,10,15,0.7);">Train 150 people aged 65+ in basic smartphone skills by Q3</span></div>
@@ -1375,110 +1416,140 @@ button { cursor: pointer !important; }
   <div class="container">
     <div class="module-header reveal">
       <div>
-        <div class="module-num">Module 08 — Foundation</div>
+        <div class="module-num">Module 08 - Foundation</div>
         <h2 class="section-title">Planning &<br><em>Implementation</em></h2>
-        <p class="section-lead">Failing to plan is planning to fail — but over-planning is also a trap. Plan just enough to control the project while remaining adaptive.</p>
-        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;margin-bottom:1.5rem;">The Project Lifecycle</h3>
+        <p class="section-lead">Failing to plan is planning to fail - but over-planning is also a trap. Plan just enough to control the project while remaining adaptive.</p>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;margin-bottom:0.5rem;">The Project Lifecycle</h3>
+        <p style="font-size:0.82rem;color:rgba(10,10,15,0.45);margin-bottom:1.5rem;">Click any phase to learn more</p>
 
         <style>
-          .lifecycle-wheel { position:relative; width:320px; height:320px; margin:0 auto 2rem; }
-          .lw-center {
-            position:absolute; top:50%; left:50%;
-            transform:translate(-50%,-50%);
-            width:100px; height:100px; border-radius:50%;
-            background:var(--green); display:flex;
-            align-items:center; justify-content:center;
-            text-align:center; z-index:10;
-            box-shadow:0 4px 20px rgba(27,94,59,0.35);
-          }
-          .lw-center-text { font-size:0.65rem; font-weight:700; color:white; text-transform:uppercase; letter-spacing:0.08em; line-height:1.3; }
-          .lw-segment {
-            position:absolute; width:96px; height:96px;
-            border-radius:50%; display:flex; flex-direction:column;
-            align-items:center; justify-content:center;
-            text-align:center; cursor:pointer;
-            transition:transform 0.2s, box-shadow 0.2s;
-            font-size:0.68rem; font-weight:700; color:white;
-            line-height:1.3; padding:0.5rem;
-            box-shadow:0 4px 16px rgba(0,0,0,0.15);
-            z-index:5;
-          }
-          .lw-segment:hover { box-shadow:0 8px 28px rgba(0,0,0,0.3); filter:brightness(1.1); }
-          .lw-seg1 { top:0px; left:50%; transform:translateX(-50%); background:#1b3a4b; }
-          .lw-seg1:hover { transform:translateX(-50%) translateY(-4px); }
-          .lw-seg2 { top:60px; right:0px; background:var(--green2); }
-          .lw-seg2:hover { transform:translate(4px, -2px); }
-          .lw-seg3 { bottom:20px; right:20px; background:#2040a0; }
-          .lw-seg3:hover { transform:translate(3px, 3px); }
-          .lw-seg4 { bottom:20px; left:20px; background:var(--gold); }
-          .lw-seg4:hover { transform:translate(-3px, 3px); }
-          .lw-seg5 { top:60px; left:0px; background:#8b2040; }
-          .lw-seg5:hover { transform:translate(-4px, -2px); }
-          .lw-seg-num { font-size:0.58rem; opacity:0.75; margin-bottom:0.2rem; font-family:'JetBrains Mono',monospace; }
-          .lw-seg-name { font-size:0.64rem; font-weight:700; line-height:1.25; }
-          /* Click panels */
-          .lw-panels { margin-top:0; }
-          .lw-panel { display:none; border-radius:var(--r); padding:1.25rem; margin-bottom:0.5rem; }
-          .lw-panel.active { display:block; animation:fadeIn 0.3s ease; }
-          .lw-panel-title { font-weight:700; font-size:0.9rem; color:white; margin-bottom:0.5rem; }
-          .lw-panel-body { font-size:0.82rem; color:rgba(255,255,255,0.85); line-height:1.7; }
-          .lw-p1 { background:#1b3a4b; }
-          .lw-p2 { background:var(--green); }
-          .lw-p3 { background:var(--green2); }
-          .lw-p4 { background:var(--gold); }
-          .lw-p5 { background:#2040a0; }
+          .pie-lc-wrap { display:flex; gap:2rem; align-items:flex-start; flex-wrap:wrap; }
+          .pie-lc-chart { position:relative; width:340px; height:340px; flex-shrink:0; margin:0 auto; }
+          /* SVG pie segments */
+          .pie-lc-seg { cursor:pointer; transition:all 0.25s; transform-origin:170px 170px; filter:drop-shadow(0 4px 12px rgba(0,0,0,0.12)); }
+          .pie-lc-seg:hover { transform:scale(1.04); filter:drop-shadow(0 8px 20px rgba(0,0,0,0.22)); }
+          .pie-lc-seg.pie-active { transform:scale(1.06); filter:drop-shadow(0 10px 24px rgba(0,0,0,0.28)) brightness(1.08); }
+          /* Content panel */
+          .pie-lc-panels { flex:1; min-width:220px; }
+          .pie-lc-panel { display:none; border-radius:12px; padding:1.25rem 1.5rem; animation:lcFade 0.3s ease; }
+          .pie-lc-panel.active { display:block; }
+          @keyframes lcFade { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:translateY(0)} }
+          .pie-lc-num { font-family:'Cormorant Garamond',serif; font-size:0.65rem; font-weight:700; text-transform:uppercase; letter-spacing:0.14em; opacity:0.8; margin-bottom:0.3rem; }
+          .pie-lc-title { font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:700; color:white; line-height:1.1; margin-bottom:0.75rem; }
+          .pie-lc-body { font-size:0.84rem; color:rgba(255,255,255,0.85); line-height:1.8; }
+          /* Legend */
+          .pie-lc-legend { display:flex; flex-direction:column; gap:0.3rem; margin-top:1.25rem; }
+          .pie-lc-leg { display:flex; align-items:center; gap:0.6rem; cursor:pointer; padding:0.35rem 0.6rem; border-radius:8px; transition:all 0.2s; }
+          .pie-lc-leg:hover, .pie-lc-leg.active { background:rgba(10,10,15,0.06); transform:translateX(3px); }
+          .pie-lc-dot { width:10px; height:10px; border-radius:50%; flex-shrink:0; }
+          .pie-lc-label { font-size:0.78rem; color:rgba(10,10,15,0.6); }
+          .pie-lc-leg.active .pie-lc-label { color:rgba(10,10,15,0.9); font-weight:600; }
         </style>
 
-        <div class="lifecycle-wheel">
-          <!-- Center -->
-          <div class="lw-center">
-            <div class="lw-center-text">Project<br>Lifecycle</div>
+        <div class="pie-lc-wrap">
+          <div class="pie-lc-chart">
+            <svg viewBox="0 0 340 340" width="340" height="340" style="overflow:visible;">
+              <!-- Segment 1: Initiation - top (#1b3a4b) -->
+              <path class="pie-lc-seg" id="plcs1" onclick="showPieLC(1)"
+                d="M170,170 L170,35 A135,135 0 0,1 297.6,102.5 Z"
+                fill="#1b3a4b" stroke="white" stroke-width="3"/>
+              <!-- Segment 2: Planning - top right (green) -->
+              <path class="pie-lc-seg" id="plcs2" onclick="showPieLC(2)"
+                d="M170,170 L297.6,102.5 A135,135 0 0,1 297.6,237.5 Z"
+                fill="#2a7a4a" stroke="white" stroke-width="3"/>
+              <!-- Segment 3: Execution - bottom right (blue) -->
+              <path class="pie-lc-seg" id="plcs3" onclick="showPieLC(3)"
+                d="M170,170 L297.6,237.5 A135,135 0 0,1 170,305 Z"
+                fill="#1e3a8a" stroke="white" stroke-width="3"/>
+              <!-- Segment 4: Monitor - bottom left (gold) -->
+              <path class="pie-lc-seg" id="plcs4" onclick="showPieLC(4)"
+                d="M170,170 L170,305 A135,135 0 0,1 42.4,237.5 Z"
+                fill="#b47f1e" stroke="white" stroke-width="3"/>
+              <!-- Segment 5: Closure - top left (crimson) -->
+              <path class="pie-lc-seg" id="plcs5" onclick="showPieLC(5)"
+                d="M170,170 L42.4,237.5 A135,135 0 0,1 170,35 Z"
+                fill="#8b1a3a" stroke="white" stroke-width="3"/>
+              <!-- Center circle -->
+              <circle cx="170" cy="170" r="68" fill="#f5f3ee" stroke="white" stroke-width="4"/>
+              <text x="170" y="164" text-anchor="middle" font-size="10" font-weight="700" fill="#0d2137" font-family="'Cormorant Garamond',serif" letter-spacing="1.5">PROJECT</text>
+              <text x="170" y="180" text-anchor="middle" font-size="10" font-weight="700" fill="#0d2137" font-family="'Cormorant Garamond',serif" letter-spacing="1.5">LIFECYCLE</text>
+              <!-- Labels on segments -->
+              <text x="231.1" y="79.9" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="'Cormorant Garamond',serif">01</text>
+              <text x="231.1" y="92.9" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="'Cormorant Garamond',serif">Initiation</text>
+              <text x="268.9" y="196.1" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="'Cormorant Garamond',serif">02</text>
+              <text x="268.9" y="209.1" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="'Cormorant Garamond',serif">Planning</text>
+              <text x="170.0" y="268.0" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="'Cormorant Garamond',serif">03</text>
+              <text x="170.0" y="281.0" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="'Cormorant Garamond',serif">Execution</text>
+              <text x="71.1" y="196.1" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="'Cormorant Garamond',serif">04</text>
+              <text x="71.1" y="209.1" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="'Cormorant Garamond',serif">Monitor</text>
+              <text x="108.9" y="79.9" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="'Cormorant Garamond',serif">05</text>
+              <text x="108.9" y="92.9" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="'Cormorant Garamond',serif">Closure</text>
+            </svg>
           </div>
-          <!-- 5 segments -->
-          <div class="lw-segment lw-seg1" onclick="showLWPanel(1)">
-            <div class="lw-seg-num">01</div>
-            <div class="lw-seg-name">Initiation</div>
-          </div>
-          <div class="lw-segment lw-seg2" onclick="showLWPanel(2)">
-            <div class="lw-seg-num">02</div>
-            <div class="lw-seg-name">Planning</div>
-          </div>
-          <div class="lw-segment lw-seg3" onclick="showLWPanel(3)">
-            <div class="lw-seg-num">03</div>
-            <div class="lw-seg-name">Execution</div>
-          </div>
-          <div class="lw-segment lw-seg4" onclick="showLWPanel(4)">
-            <div class="lw-seg-num">04</div>
-            <div class="lw-seg-name">Monitor &amp; Control</div>
-          </div>
-          <div class="lw-segment lw-seg5" onclick="showLWPanel(5)">
-            <div class="lw-seg-num">05</div>
-            <div class="lw-seg-name">Closure</div>
+
+          <div class="pie-lc-panels">
+            <div class="pie-lc-panel active" id="plcp1" style="background:#1b3a4b;">
+              <div class="pie-lc-num" style="color:rgba(255,255,255,0.6);">Phase 01</div>
+              <div class="pie-lc-title">Initiation</div>
+              <div class="pie-lc-body">Project brief, business case, feasibility study, stakeholder analysis, initial risk assessment, and sponsor approval. Key output: <strong>Project Charter</strong>. Most commonly rushed phase - don't skip it. Irish charity projects must confirm funder eligibility and compliance requirements here.</div>
+            </div>
+            <div class="pie-lc-panel" id="plcp2" style="background:#2a7a4a;">
+              <div class="pie-lc-num" style="color:rgba(255,255,255,0.6);">Phase 02</div>
+              <div class="pie-lc-title">Planning</div>
+              <div class="pie-lc-body">WBS, Gantt chart, resource plan, budget, RACI matrix, communication plan, risk register. Key output: <strong>Project Management Plan</strong>. For Pobal-funded projects, the plan must be approved before any expenditure begins.</div>
+            </div>
+            <div class="pie-lc-panel" id="plcp3" style="background:#1e3a8a;">
+              <div class="pie-lc-num" style="color:rgba(255,255,255,0.6);">Phase 03</div>
+              <div class="pie-lc-title">Execution</div>
+              <div class="pie-lc-body">Delivering the work. Managing the team, tracking progress, handling change requests, quality assurance, stakeholder engagement. The PM shifts from planner to facilitator. Hold weekly standups and monthly stakeholder updates.</div>
+            </div>
+            <div class="pie-lc-panel" id="plcp4" style="background:#b47f1e;">
+              <div class="pie-lc-num" style="color:rgba(255,255,255,0.6);">Phase 04</div>
+              <div class="pie-lc-title">Monitoring &amp; Control</div>
+              <div class="pie-lc-body">Status reports, KPI tracking, budget vs actual (Earned Value Management), issue log, Milestone Trend Analysis. Runs <em>parallel</em> to execution - not a separate phase. Irish funders expect quarterly progress reports with budget reconciliation.</div>
+            </div>
+            <div class="pie-lc-panel" id="plcp5" style="background:#8b1a3a;">
+              <div class="pie-lc-num" style="color:rgba(255,255,255,0.6);">Phase 05</div>
+              <div class="pie-lc-title">Closure</div>
+              <div class="pie-lc-body">Lessons learned, final funder report, financial audit, handover documentation, team recognition. For charity projects, an impact evaluation for Pobal, Tusla, or LEADER is mandatory. Never skip the celebration - for volunteers, recognition is everything.</div>
+            </div>
+
+            <div class="pie-lc-legend">
+              <div class="pie-lc-leg active" id="plcl1" onclick="showPieLC(1)"><div class="pie-lc-dot" style="background:#1b3a4b;"></div><span class="pie-lc-label">01 - Initiation</span></div>
+              <div class="pie-lc-leg" id="plcl2" onclick="showPieLC(2)"><div class="pie-lc-dot" style="background:#2a7a4a;"></div><span class="pie-lc-label">02 - Planning</span></div>
+              <div class="pie-lc-leg" id="plcl3" onclick="showPieLC(3)"><div class="pie-lc-dot" style="background:#1e3a8a;"></div><span class="pie-lc-label">03 - Execution</span></div>
+              <div class="pie-lc-leg" id="plcl4" onclick="showPieLC(4)"><div class="pie-lc-dot" style="background:#b47f1e;"></div><span class="pie-lc-label">04 - Monitor &amp; Control</span></div>
+              <div class="pie-lc-leg" id="plcl5" onclick="showPieLC(5)"><div class="pie-lc-dot" style="background:#8b1a3a;"></div><span class="pie-lc-label">05 - Closure</span></div>
+            </div>
           </div>
         </div>
 
-        <p style="font-size:0.75rem;color:rgba(10,10,15,0.4);text-align:center;margin-bottom:1.5rem;font-family:'JetBrains Mono',monospace;">↑ Click any phase to learn more</p>
+        <script>
+          function showPieLC(n) {
+            for(var i=1;i<=5;i++){
+              document.getElementById('plcs'+i).classList.remove('pie-active');
+              document.getElementById('plcp'+i).classList.remove('active');
+              document.getElementById('plcl'+i).classList.remove('active');
+            }
+            document.getElementById('plcs'+n).classList.add('pie-active');
+            document.getElementById('plcp'+n).classList.add('active');
+            document.getElementById('plcl'+n).classList.add('active');
+          }
+          showPieLC(1);
+        </script>
 
-        <div class="lw-panels">
+        <div class="lw-panels" style="display:none;">
           <div class="lw-panel lw-p1 active" id="lwp1">
-            <div class="lw-panel-title">01 — Initiation</div>
-            <div class="lw-panel-body">Project brief, business case, feasibility study, stakeholder analysis, initial risk assessment, and sponsor approval. Key output: <strong>Project Charter</strong>. This phase is most commonly rushed — don't skip it. In Irish charity projects, the initiation phase should include confirmation of funder eligibility and compliance requirements.</div>
-          </div>
-          <div class="lw-panel lw-p2" id="lwp2">
-            <div class="lw-panel-title">02 — Planning</div>
-            <div class="lw-panel-body">WBS, Gantt chart, resource plan, budget, communication plan, risk register, RACI matrix, procurement plan. Key output: <strong>Project Management Plan</strong>. Quality of planning determines quality of delivery. For Pobal-funded projects, the project plan must be submitted and approved before expenditure can begin.</div>
-          </div>
-          <div class="lw-panel lw-p3" id="lwp3">
-            <div class="lw-panel-title">03 — Execution</div>
-            <div class="lw-panel-body">Delivering the work. Managing the team, tracking progress, handling change requests, quality assurance, stakeholder engagement. The PM's role shifts from planner to facilitator and problem-solver. Hold weekly team standups and monthly stakeholder updates.</div>
+            <div class="lw-panel-title">01 - Initiation</div>
+            <div class="lw-panel-body">placeholder</div>
           </div>
           <div class="lw-panel lw-p4" id="lwp4">
-            <div class="lw-panel-title">04 — Monitoring &amp; Control</div>
-            <div class="lw-panel-body">Status reports, KPI tracking, budget vs. actual (Earned Value Management), issue log, Milestone Trend Analysis. Runs <em>parallel</em> to execution — not a separate phase. Catches problems before they become crises. Irish funders expect quarterly progress reports with budget reconciliation.</div>
+            <div class="lw-panel-title">04 - Monitoring &amp; Control</div>
+            <div class="lw-panel-body">placeholder</div>
           </div>
           <div class="lw-panel lw-p5" id="lwp5">
-            <div class="lw-panel-title">05 — Closure</div>
-            <div class="lw-panel-body">Lessons learned session, final funder report, financial audit and close-out, handover documentation, team recognition and celebration. In charity projects: impact evaluation report for funders (Pobal, Tusla, LEADER) is mandatory. Don't skip the celebration — for volunteers, recognition is everything.</div>
+            <div class="lw-panel-title">05 - Closure</div>
+            <div class="lw-panel-body">Lessons learned session, final funder report, financial audit and close-out, handover documentation, team recognition and celebration. In charity projects: impact evaluation report for funders (Pobal, Tusla, LEADER) is mandatory. Don't skip the celebration - for volunteers, recognition is everything.</div>
           </div>
         </div>
 
@@ -1504,7 +1575,7 @@ button { cursor: pointer !important; }
         </div>
         <div class="callout callout-green" style="margin-top:2rem;">
           <div class="callout-label">🆓 Free Tools for Small Teams</div>
-          <p><strong>Trello / Asana</strong> — Kanban task management (free tier)<br><strong>Google Workspace for Nonprofits</strong> — Free for registered Irish charities<br><strong>Notion</strong> — All-in-one docs, databases, project tracking<br><strong>Miro</strong> — Visual collaboration for remote retrospectives</p>
+          <p><strong>Trello / Asana</strong> - Kanban task management (free tier)<br><strong>Google Workspace for Nonprofits</strong> - Free for registered Irish charities<br><strong>Notion</strong> - All-in-one docs, databases, project tracking<br><strong>Miro</strong> - Visual collaboration for remote retrospectives</p>
         </div>
 
         <div style="margin-top:2rem;">
@@ -1524,19 +1595,19 @@ button { cursor: pointer !important; }
             </div>
             <div class="card" style="padding:1.5rem;">
               <div style="font-weight:700;color:#600060;font-size:0.82rem;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.5rem;">🗺️ Critical Path Method (CPM)</div>
-              <p style="font-size:0.85rem;color:rgba(10,10,15,0.65);margin:0;line-height:1.7;">Identifies the longest sequence of dependent tasks — the critical path. Any delay on these tasks delays the whole project. Free CPM tools: GanttProject, ProjectLibre, or simply map it in Google Sheets.</p>
+              <p style="font-size:0.85rem;color:rgba(10,10,15,0.65);margin:0;line-height:1.7;">Identifies the longest sequence of dependent tasks - the critical path. Any delay on these tasks delays the whole project. Free CPM tools: GanttProject, ProjectLibre, or simply map it in Google Sheets.</p>
             </div>
           </div>
         </div>
 
         <div class="media-card" style="margin-top:2rem;">
-          <div class="media-header"><span style="font-size:1rem;">🎬</span><span class="media-title-text">Project Management Planning — Adriana Girdler PMP</span><span class="media-label">VIDEO</span></div>
+          <div class="media-header"><span style="font-size:1rem;">🎬</span><span class="media-title-text">Project Management Planning - Adriana Girdler PMP</span><span class="media-label">VIDEO</span></div>
           <div class="media-body">
             <div class="video-thumb">
               <a href="https://www.youtube.com/watch?v=uucbbktsMsA" target="_blank" rel="noopener noreferrer" class="play-btn-wrap">▶</a>
-              <div class="video-caption">Project Management Planning Tips — WBS, Dependencies, Change Control<br><span style="font-size:0.72rem;opacity:0.6;">Adriana Girdler PMP · Lean Six Sigma Master Black Belt · Active channel since 2013</span></div>
+              <div class="video-caption">Project Management Planning Tips - WBS, Dependencies, Change Control<br><span style="font-size:0.72rem;opacity:0.6;">Adriana Girdler PMP · Lean Six Sigma Master Black Belt · Active channel since 2013</span></div>
             </div>
-            <p>Covers Work Breakdown Structure, task dependencies, change control, and planning fundamentals — all in one practical video by one of the world's top PM educators.</p>
+            <p>Covers Work Breakdown Structure, task dependencies, change control, and planning fundamentals - all in one practical video by one of the world's top PM educators.</p>
           </div>
         </div>
       </div>
@@ -1548,7 +1619,7 @@ button { cursor: pointer !important; }
 <section id="stakeholders" class="section section-white" style="scroll-margin-top:72px;">
   <div class="container">
     <div class="reveal">
-      <div class="module-num">Module 09 — People</div>
+      <div class="module-num">Module 09 - People</div>
       <h2 class="section-title">Stakeholder<br><em>Engagement</em></h2>
       <p class="section-lead">Projects fail because of people, not plans. Identifying who matters, what they care about, and how to engage them is one of the most underdeveloped skills in small organisations.</p>
     </div>
@@ -1558,7 +1629,7 @@ button { cursor: pointer !important; }
         <div class="sm-hdr"></div><div class="sm-hdr">LOW INTEREST</div><div class="sm-hdr">HIGH INTEREST</div>
         <div class="sm-axis">HIGH POWER</div>
         <div class="sm-q satisfy"><div class="sm-q-title">Keep Satisfied</div><p>Senior funders, Board members, Government bodies. High power, may not monitor closely. Keep informed; seek input on key decisions.</p></div>
-        <div class="sm-q manage"><div class="sm-q-title">Manage Closely</div><p>Key funders with monitoring roles, Board sponsor, local authorities. Your most important stakeholders — regular updates, co-design, early warning of problems.</p></div>
+        <div class="sm-q manage"><div class="sm-q-title">Manage Closely</div><p>Key funders with monitoring roles, Board sponsor, local authorities. Your most important stakeholders - regular updates, co-design, early warning of problems.</p></div>
         <div class="sm-axis">LOW POWER</div>
         <div class="sm-q monitor"><div class="sm-q-title">Monitor</div><p>General public, peripheral groups. Keep informed through newsletters. Watch for changes in interest level.</p></div>
         <div class="sm-q inform"><div class="sm-q-title">Keep Informed</div><p>Service users, community members. Often most affected by your project. High ethical obligation to involve them meaningfully in decision-making.</p></div>
@@ -1566,7 +1637,7 @@ button { cursor: pointer !important; }
     </div>
     <div class="callout callout-gold reveal" style="margin-top:2rem;">
       <div class="callout-label">🇮🇪 Key Irish Stakeholder Bodies</div>
-      <p><strong>Pobal</strong> — Manages government & EU social inclusion funding · <strong>LEADER</strong> — Rural development through Local Action Groups · <strong>Tusla</strong> — Child & Family Agency · <strong>Local Authorities</strong> — Community grants, LECP alignment · <strong>LCDC / PPN</strong> — Community voice in local government</p>
+      <p><strong>Pobal</strong> - Manages government & EU social inclusion funding · <strong>LEADER</strong> - Rural development through Local Action Groups · <strong>Tusla</strong> - Child & Family Agency · <strong>Local Authorities</strong> - Community grants, LECP alignment · <strong>LCDC / PPN</strong> - Community voice in local government</p>
     </div>
   </div>
 </section>
@@ -1575,11 +1646,11 @@ button { cursor: pointer !important; }
 <section id="methodologies" class="section section-cream" style="scroll-margin-top:72px;">
   <div class="container">
     <div class="reveal">
-      <div class="module-num">Module 10 — Methods</div>
+      <div class="module-num">Module 10 - Methods</div>
       <h2 class="section-title">Project Management<br><em>Methodologies</em></h2>
       <p class="section-lead">There is no universally "best" methodology. The right approach depends on your project's complexity, certainty of requirements, team size, and funder expectations.</p>
     </div>
-    <!-- METHODOLOGIES — stunning card grid -->
+    <!-- METHODOLOGIES - stunning card grid -->
     <style>
       .meth-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:2.5rem; }
       @media(max-width:900px){ .meth-grid { grid-template-columns:repeat(2,1fr); } }
@@ -1632,7 +1703,7 @@ button { cursor: pointer !important; }
           <div class="meth-card-tag">Traditional · Sequential</div>
         </div>
         <div class="meth-card-body">
-          <p>A linear approach where each phase — initiation, planning, execution, closure — is completed before the next begins. Best for stable, well-defined projects.</p>
+          <p>A linear approach where each phase - initiation, planning, execution, closure - is completed before the next begins. Best for stable, well-defined projects.</p>
           <div class="meth-when">
             <div class="meth-when-label" style="color:#1b3a4b;">✅ Best for</div>
             <p>Events with fixed dates · Construction · Regulatory compliance · Prescriptive funder requirements</p>
@@ -1680,7 +1751,7 @@ button { cursor: pointer !important; }
           <div class="meth-card-tag">Efficiency · Waste Elimination</div>
         </div>
         <div class="meth-card-body">
-          <p>From Toyota's production system — maximise value for the end user while eliminating all forms of waste. Widely adopted by the HSE and Irish charity service providers.</p>
+          <p>From Toyota's production system - maximise value for the end user while eliminating all forms of waste. Widely adopted by the HSE and Irish charity service providers.</p>
           <div class="meth-when">
             <div class="meth-when-label" style="color:#2040a0;">✅ Best for</div>
             <p>Service improvement · Process optimisation · Healthcare · Reducing waiting times</p>
@@ -1696,7 +1767,7 @@ button { cursor: pointer !important; }
           <div class="meth-card-tag">Visual · Flow-Based</div>
         </div>
         <div class="meth-card-body">
-          <p>A visual board system (To Do → In Progress → Done) that limits work-in-progress and highlights bottlenecks. Simple enough for any team to adopt immediately — no training required.</p>
+          <p>A visual board system (To Do → In Progress → Done) that limits work-in-progress and highlights bottlenecks. Simple enough for any team to adopt immediately - no training required.</p>
           <div class="meth-when">
             <div class="meth-when-label" style="color:#600060;">✅ Best for</div>
             <p>Small teams · Ongoing operations · Support services · Visualising team workload</p>
@@ -1709,7 +1780,7 @@ button { cursor: pointer !important; }
         <div class="meth-card-top" style="background:linear-gradient(135deg,var(--ink),var(--green));min-height:140px;flex-direction:row;align-items:center;gap:2rem;">
           <div>
             <span class="meth-card-emoji" style="margin-bottom:0.5rem;">🏆</span>
-            <div class="meth-card-name" style="font-size:2rem;">Hybrid — Best for Irish SMEs & Charities</div>
+            <div class="meth-card-name" style="font-size:2rem;">Hybrid - Best for Irish SMEs & Charities</div>
             <div class="meth-card-tag">Recommended Approach · Combines the best of all methods</div>
           </div>
         </div>
@@ -1717,15 +1788,15 @@ button { cursor: pointer !important; }
           <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem;">
             <div>
               <div style="font-weight:700;color:var(--green);font-size:0.78rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem;">Overall Governance</div>
-              <p>Use PRINCE2-style governance — Project Board, stage gates, formal approval — to satisfy funders like Pobal, Tusla, and LEADER.</p>
+              <p>Use PRINCE2-style governance - Project Board, stage gates, formal approval - to satisfy funders like Pobal, Tusla, and LEADER.</p>
             </div>
             <div>
               <div style="font-weight:700;color:var(--gold);font-size:0.78rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem;">Within Each Stage</div>
-              <p>Use Agile sprints for delivery — allows the team to adapt, respond to community feedback, and iterate on what's working.</p>
+              <p>Use Agile sprints for delivery - allows the team to adapt, respond to community feedback, and iterate on what's working.</p>
             </div>
             <div>
               <div style="font-weight:700;color:#2040a0;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem;">Outcome Measurement</div>
-              <p>Use Logic Model + OKRs to bridge project activities to long-term impact — exactly what Irish funders want to see in final reports.</p>
+              <p>Use Logic Model + OKRs to bridge project activities to long-term impact - exactly what Irish funders want to see in final reports.</p>
             </div>
           </div>
           <div style="overflow-x:auto;margin-top:1.5rem;">
@@ -1751,9 +1822,9 @@ button { cursor: pointer !important; }
       <div class="media-body">
         <div class="video-thumb">
           <a href="https://www.youtube.com/watch?v=1iccpf2eN1Q" target="_blank" rel="noopener noreferrer" class="play-btn-wrap">▶</a>
-          <div class="video-caption">Waterfall vs Agile vs PRINCE2 vs Lean — Plain English<br><span style="font-size:0.72rem;opacity:0.6;">8 min · Ideal for understanding which approach suits your project</span></div>
+          <div class="video-caption">Waterfall vs Agile vs PRINCE2 vs Lean - Plain English<br><span style="font-size:0.72rem;opacity:0.6;">8 min · Ideal for understanding which approach suits your project</span></div>
         </div>
-        <p>A clear, practical comparison of all major methodologies — ideal for explaining your methodology choice to board members or Irish funders.</p>
+        <p>A clear, practical comparison of all major methodologies - ideal for explaining your methodology choice to board members or Irish funders.</p>
       </div>
     </div>
 
@@ -1764,26 +1835,26 @@ button { cursor: pointer !important; }
 <section id="ai" class="section section-ink" style="scroll-margin-top:72px;">
   <div class="container">
     <div class="reveal">
-      <div class="module-num" style="color:var(--gold2);">Module 11 — Digital</div>
+      <div class="module-num" style="color:var(--gold2);">Module 11 - Digital</div>
       <h2 class="section-title light">AI in Project<br><em>Management</em></h2>
-      <p class="section-lead light">Free and low-cost AI tools are transforming what small teams can accomplish — if used thoughtfully, ethically, and with awareness of Ireland's regulatory environment.</p>
+      <p class="section-lead light">Free and low-cost AI tools are transforming what small teams can accomplish - if used thoughtfully, ethically, and with awareness of Ireland's regulatory environment.</p>
     </div>
     <div class="ai-grid reveal">
-      <div class="ai-card"><span class="ai-icon">📝</span><div class="ai-name">Meeting Summaries</div><p class="ai-desc">Otter.ai, Fireflies, Microsoft Copilot — transcribe and summarise meetings automatically, saving 30–60 min of admin per session.</p></div>
+      <div class="ai-card"><span class="ai-icon">📝</span><div class="ai-name">Meeting Summaries</div><p class="ai-desc">Otter.ai, Fireflies, Microsoft Copilot - transcribe and summarise meetings automatically, saving 30–60 min of admin per session.</p></div>
       <div class="ai-card"><span class="ai-icon">✍️</span><div class="ai-name">Grant Writing</div><p class="ai-desc">AI drafts first versions of grant applications, funder reports, and communications. Humans refine, verify facts, and add authentic voice.</p></div>
       <div class="ai-card"><span class="ai-icon">📊</span><div class="ai-name">Data Analysis</div><p class="ai-desc">ChatGPT with Code Interpreter or Copilot in Excel analyse survey data, produce charts, and identify patterns in your outcome data.</p></div>
       <div class="ai-card"><span class="ai-icon">🗓️</span><div class="ai-name">Schedule Optimisation</div><p class="ai-desc">Reclaim.ai and Motion automatically schedule tasks around meetings, protecting deep work time for small teams with complex diaries.</p></div>
-      <div class="ai-card"><span class="ai-icon">🔍</span><div class="ai-name">Research & Synthesis</div><p class="ai-desc">Perplexity.ai and Claude excel at synthesising large documents — useful for literature reviews, policy analysis, and benchmarking.</p></div>
-      <div class="ai-card"><span class="ai-icon">🌐</span><div class="ai-name">Translation</div><p class="ai-desc">DeepL and Google Translate enable multilingual communication — valuable for projects serving Ireland's diverse migrant communities.</p></div>
+      <div class="ai-card"><span class="ai-icon">🔍</span><div class="ai-name">Research & Synthesis</div><p class="ai-desc">Perplexity.ai and Claude excel at synthesising large documents - useful for literature reviews, policy analysis, and benchmarking.</p></div>
+      <div class="ai-card"><span class="ai-icon">🌐</span><div class="ai-name">Translation</div><p class="ai-desc">DeepL and Google Translate enable multilingual communication - valuable for projects serving Ireland's diverse migrant communities.</p></div>
     </div>
     <div class="card-grid-2 reveal" style="margin-top:2rem;">
       <div class="card dark">
         <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold2);margin-bottom:1rem;">🇮🇪 Irish & EU AI Regulation</div>
-        <ul class="arrow-list light"><li><strong style="color:rgba(247,245,240,0.8);">National AI Strategy 2021</strong> <sup class="cite">30</sup> — "AI — Here for Good" — trustworthy, human-centred AI for Ireland</li><li><strong style="color:rgba(247,245,240,0.8);">EU AI Act (2024)</strong> <sup class="cite">31</sup> — classifies AI by risk level; high-risk applications face strict requirements</li><li><strong style="color:rgba(247,245,240,0.8);">DPC Guidance on AI & GDPR</strong> — do not input client personal data into public AI tools</li><li><strong style="color:rgba(247,245,240,0.8);">Pobal Digital Support Scheme</strong> — funding available for charities adopting AI-assisted services</li></ul>
+        <ul class="arrow-list light"><li><strong style="color:rgba(247,245,240,0.8);">National AI Strategy 2021</strong> <sup class="cite">30</sup> - "AI - Here for Good" - trustworthy, human-centred AI for Ireland</li><li><strong style="color:rgba(247,245,240,0.8);">EU AI Act (2024)</strong> <sup class="cite">31</sup> - classifies AI by risk level; high-risk applications face strict requirements</li><li><strong style="color:rgba(247,245,240,0.8);">DPC Guidance on AI & GDPR</strong> - do not input client personal data into public AI tools</li><li><strong style="color:rgba(247,245,240,0.8);">Pobal Digital Support Scheme</strong> - funding available for charities adopting AI-assisted services</li></ul>
       </div>
       <div class="card dark">
         <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#ff9999;margin-bottom:1rem;">⚠️ Critical Limitations</div>
-        <ul class="arrow-list light"><li>AI "hallucinations" — always verify facts independently before publishing</li><li>GDPR — never input personal data of clients or beneficiaries into public AI tools</li><li>Bias — AI outputs reflect training data biases; review critically for Irish context</li><li>Skills atrophy — use AI to supplement, not replace, human expertise and judgement</li><li>Check funder policy on AI-generated content in reports before submitting</li></ul>
+        <ul class="arrow-list light"><li>AI "hallucinations" - always verify facts independently before publishing</li><li>GDPR - never input personal data of clients or beneficiaries into public AI tools</li><li>Bias - AI outputs reflect training data biases; review critically for Irish context</li><li>Skills atrophy - use AI to supplement, not replace, human expertise and judgement</li><li>Check funder policy on AI-generated content in reports before submitting</li></ul>
       </div>
     </div>
   </div>
@@ -1829,7 +1900,7 @@ button { cursor: pointer !important; }
           <li>Ohno, T. (1988). <em>Toyota Production System.</em> Portland: Productivity Press.</li>
           <li>Ries, E. (2011). <em>The Lean Startup.</em> New York: Crown Business.</li>
           <li>Fernandez, D.J. & Fernandez, J.D. (2008). "Agile Project Management." <em>Journal of Computer Information Systems</em>, 49(2), 10–17. †</li>
-          <li>Government of Ireland (2021). <em>AI — Here for Good: Ireland's National AI Strategy.</em> Dublin: DETE. ‡</li>
+          <li>Government of Ireland (2021). <em>AI - Here for Good: Ireland's National AI Strategy.</em> Dublin: DETE. ‡</li>
           <li>European Parliament (2024). <em>EU AI Act (Regulation 2024/1689).</em> Official Journal of the EU. ‡</li>
         </ul>
       </div>
@@ -1839,9 +1910,9 @@ button { cursor: pointer !important; }
     <div style="margin-top:3rem;padding-top:3rem;border-top:1px solid var(--border);">
       <div class="section-eyebrow" style="margin-bottom:1.5rem;">Essential Irish Web Resources</div>
       <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;">
-        <a href="https://www.charityregulator.ie" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:0.75rem;padding:1rem 1.25rem;background:var(--cream);border:1px solid var(--border);border-radius:var(--r);text-decoration:none;transition:all 0.2s;color:var(--ink);" onmouseover="this.style.borderColor='var(--green)';this.style.background='var(--green-pale)'" onmouseout="this.style.borderColor='var(--border)';this.style.background='var(--cream)'">
+        <a href="https://www.charitiesregulator.ie" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:0.75rem;padding:1rem 1.25rem;background:var(--cream);border:1px solid var(--border);border-radius:var(--r);text-decoration:none;transition:all 0.2s;color:var(--ink);" onmouseover="this.style.borderColor='var(--green)';this.style.background='var(--green-pale)'" onmouseout="this.style.borderColor='var(--border)';this.style.background='var(--cream)'">
           <span style="font-size:1.2rem;">🏛️</span>
-          <div><div style="font-size:0.82rem;font-weight:600;color:var(--ink);">Charities Regulator</div><div style="font-size:0.7rem;color:rgba(10,10,15,0.45);font-family:'JetBrains Mono',monospace;">charityregulator.ie</div></div>
+          <div><div style="font-size:0.82rem;font-weight:600;color:var(--ink);">Charities Regulator</div><div style="font-size:0.7rem;color:rgba(10,10,15,0.45);font-family:'JetBrains Mono',monospace;">charitiesregulator.ie</div></div>
         </a>
         <a href="https://www.pobal.ie" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:0.75rem;padding:1rem 1.25rem;background:var(--cream);border:1px solid var(--border);border-radius:var(--r);text-decoration:none;transition:all 0.2s;color:var(--ink);" onmouseover="this.style.borderColor='var(--green)';this.style.background='var(--green-pale)'" onmouseout="this.style.borderColor='var(--border)';this.style.background='var(--cream)'">
           <span style="font-size:1.2rem;">💶</span>
@@ -1908,7 +1979,7 @@ button { cursor: pointer !important; }
     <div>
       <div class="footer-heading">Irish Resources</div>
       <ul class="footer-links">
-        <li><a href="https://www.charityregulator.ie" target="_blank" rel="noopener noreferrer">Charities Regulator</a></li>
+        <li><a href="https://www.charitiesregulator.ie" target="_blank" rel="noopener noreferrer">Charities Regulator</a></li>
         <li><a href="https://www.pobal.ie" target="_blank" rel="noopener noreferrer">Pobal</a></li>
         <li><a href="https://www.wheel.ie" target="_blank" rel="noopener noreferrer">The Wheel</a></li>
         <li><a href="https://www.dataprotection.ie" target="_blank" rel="noopener noreferrer">DPC / GDPR</a></li>
