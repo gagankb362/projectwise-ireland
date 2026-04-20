@@ -1341,46 +1341,55 @@ button { cursor: pointer !important; }
     <div class="reveal">
       <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;margin-bottom:1.5rem;">The Logic Model <sup class="cite">16</sup></h3>
       <style>
-        .lm-chain { display:flex; align-items:stretch; gap:0; overflow-x:auto; border-radius:12px; overflow:hidden; }
+        .lm-chain { display:flex; align-items:stretch; gap:0; border-radius:12px; overflow:hidden; }
         .lm-box {
-          flex:1; min-width:120px; padding:1.25rem 1rem;
+          flex:1; min-width:100px; padding:1.25rem 1rem;
           display:flex; flex-direction:column; gap:0.5rem;
-          position:relative;
         }
-        .lm-box::after {
-          content:'→';
-          position:absolute; right:-12px; top:50%;
-          transform:translateY(-50%);
-          font-size:1.1rem; color:rgba(255,255,255,0.5);
-          z-index:2; font-weight:300;
+        .lm-arrow {
+          width:36px; flex-shrink:0;
+          background:#e8e6e0;
+          display:flex; align-items:center; justify-content:center;
         }
-        .lm-box:last-child::after { display:none; }
+        .lm-arrow svg { width:16px; height:16px; }
         .lm-label {
           font-size:0.6rem; font-weight:700; letter-spacing:0.14em;
-          text-transform:uppercase; opacity:0.75;
-          font-family:'Cormorant Garamond',serif;
+          text-transform:uppercase; opacity:0.7;
+          font-family:'Cormorant Garamond',serif; color:rgba(255,255,255,0.8);
         }
-        .lm-text { font-size:0.82rem; font-weight:500; line-height:1.5; color:white; }
+        .lm-text { font-size:0.84rem; font-weight:600; line-height:1.5; color:white; }
       </style>
       <div class="lm-chain">
         <div class="lm-box" style="background:#0d2137;">
-          <div class="lm-label" style="color:rgba(255,255,255,0.65);">INPUTS</div>
+          <div class="lm-label">INPUTS</div>
           <div class="lm-text">Staff, volunteers, money, facilities, expertise</div>
         </div>
+        <div class="lm-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13,6 19,12 13,18"/></svg>
+        </div>
         <div class="lm-box" style="background:#1a5c3a;">
-          <div class="lm-label" style="color:rgba(255,255,255,0.65);">ACTIVITIES</div>
+          <div class="lm-label">ACTIVITIES</div>
           <div class="lm-text">What you actually do day-to-day</div>
         </div>
+        <div class="lm-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13,6 19,12 13,18"/></svg>
+        </div>
         <div class="lm-box" style="background:#b47f1e;">
-          <div class="lm-label" style="color:rgba(255,255,255,0.65);">OUTPUTS</div>
+          <div class="lm-label">OUTPUTS</div>
           <div class="lm-text">Measurable deliverables and products</div>
         </div>
+        <div class="lm-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13,6 19,12 13,18"/></svg>
+        </div>
         <div class="lm-box" style="background:#1e3a8a;">
-          <div class="lm-label" style="color:rgba(255,255,255,0.65);">OUTCOMES</div>
+          <div class="lm-label">OUTCOMES</div>
           <div class="lm-text">Changes for beneficiaries and communities</div>
         </div>
+        <div class="lm-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13,6 19,12 13,18"/></svg>
+        </div>
         <div class="lm-box" style="background:#5b1a72;">
-          <div class="lm-label" style="color:rgba(255,255,255,0.65);">IMPACT</div>
+          <div class="lm-label">IMPACT</div>
           <div class="lm-text">Long-term societal change</div>
         </div>
       </div>
